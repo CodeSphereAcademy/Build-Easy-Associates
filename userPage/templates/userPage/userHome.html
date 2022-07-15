@@ -1,0 +1,1058 @@
+{% extends 'userPage/header.html' %}
+{% load static %}
+{% block content %}
+<header>
+
+    <!-- Background image laptop -->
+    <div class="text-center" style="height: 100vh;">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.95)">
+            <!-- Carousel wrapper -->
+            <div id="carouselMaterialStyle" class="carousel carousel-fade" data-mdb-ride="carousel">
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <!-- Inner -->
+                <div class="carousel-inner shadow-4-strong">
+
+                    <!-- Single item -->
+                    <div class="carousel-item active">
+                        <img src=""
+                            style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/1.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: 100vw 100vh;filter: blur(4px);"
+                            class="d-md-block d-none mx-auto" />
+                        <img src=""
+                            style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/1.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: cover;filter: blur(4px);"
+                            class="d-block d-md-none mx-auto" />
+                        <div class="carousel-caption d-flex justify-content-center align-items-center"
+                            style="height:100vh; left:0%; right:0%;">
+                            <div class="mt-5 pt-5">
+                                <h1 class="mb-3 fw-bold" style="font-family: 'Raleway', sans-serif;">BUILD-EASY <span
+                                        style="color:rgb(230, 0, 0);">ASSOCIATES</span></h1>
+                                <h5 class="mb-4 fw-light d-none d-md-block" style="font-family: 'Raleway', sans-serif;">
+                                    Service provider for
+                                    all kind of Civil, Architectural and Interior Designing Works.</h5>
+                                <h6 class="mb-4 fw-light d-block d-md-none px-3"
+                                    style="font-family: 'Raleway', sans-serif;">Service provider for
+                                    all kind of Civil, Architectural and Interior Designing Works.</h6>
+                                <div class="mx-auto d-none d-md-block">
+                                    <a class="btn btn-outline-light rounded rounded-pill m-2"
+                                        data-mdb-ripple-color="light" href="#myFormHeading fs-6 fw-bold">Learn More <i
+                                            class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                                    <a class="btn btn-light rounded rounded-pill m-2" data-mdb-ripple-color="light"
+                                        href="#myFormHeading">
+                                        Get Quote <i class="fas fa-briefcase ms-1"></i></a>
+                                </div>
+                                <div class="mx-auto px-3 d-block d-md-none">
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="{% url 'userAbout' %}">Learn More <i
+                                            class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="#myFormHeading">Get Quote <i
+                                            class="fas fa-briefcase ms-1"></i></a>
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="{% url 'userToken' %}">Track Work Progress
+                                        <i class="fas fa-briefcase-clock ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single item -->
+                    <div class="carousel-item">
+                        <img src=""
+                            style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/2.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: 100vw 100vh;filter: blur(4px);"
+                            class="d-md-block d-none mx-auto" />
+                        <img src=""
+                            style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/2.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: cover;filter: blur(4px);"
+                            class="d-block d-md-none mx-auto" />
+                        <div class="carousel-caption d-flex justify-content-center align-items-center"
+                            style="height:100vh; left:0%; right:0%;">
+                            <div class="mt-5 pt-5">
+                                <h1 class="mb-3 fw-bold" style="font-family: 'Raleway', sans-serif;">BUILD-EASY <span
+                                        style="color:rgb(230, 0, 0);">ASSOCIATES</span></h1>
+                                <h5 class="mb-4 fw-light d-none d-md-block" style="font-family: 'Raleway', sans-serif;">
+                                    Service provider for
+                                    all kind of Civil, Architectural and Interior Designing Works.</h5>
+                                <h6 class="mb-4 fw-light d-block d-md-none px-3"
+                                    style="font-family: 'Raleway', sans-serif;">Service provider for
+                                    all kind of Civil, Architectural and Interior Designing Works.</h6>
+                                <div class="mx-auto d-none d-md-block">
+                                    <a class="btn btn-outline-light rounded rounded-pill m-2"
+                                        data-mdb-ripple-color="light" href="#myFormHeading fs-6 fw-bold">Learn More <i
+                                            class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                                    <a class="btn btn-light rounded rounded-pill m-2" data-mdb-ripple-color="light"
+                                        href="#myFormHeading">
+                                        Get Quote <i class="fas fa-briefcase ms-1"></i></a>
+                                </div>
+                                <div class="mx-auto px-3 d-block d-md-none">
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="{% url 'userAbout' %}">Learn More <i
+                                            class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="#myFormHeading">Get Quote <i
+                                            class="fas fa-briefcase ms-1"></i></a>
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="{% url 'userToken' %}">Track Work Progress
+                                        <i class="fas fa-briefcase-clock ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single item -->
+                    <div class="carousel-item">
+                        <img src=""
+                            style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/7.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: 100vw 100vh;filter: blur(4px);"
+                            class="d-md-block d-none mx-auto" />
+                        <img src=""
+                            style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/7.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: cover;filter: blur(4px);"
+                            class="d-block d-md-none mx-auto" />
+                        <div class="carousel-caption d-flex justify-content-center align-items-center"
+                            style="height:100vh; left:0%; right:0%;">
+                            <div class="mt-5 pt-5">
+                                <h1 class="mb-3 fw-bold" style="font-family: 'Raleway', sans-serif;">BUILD-EASY <span
+                                        style="color:rgb(230, 0, 0);">ASSOCIATES</span></h1>
+                                <h5 class="mb-4 fw-light d-none d-md-block" style="font-family: 'Raleway', sans-serif;">
+                                    Service provider for
+                                    all kind of Civil, Architectural and Interior Designing Works.</h5>
+                                <h6 class="mb-4 fw-light d-block d-md-none px-3"
+                                    style="font-family: 'Raleway', sans-serif;">Service provider for
+                                    all kind of Civil, Architectural and Interior Designing Works.</h6>
+                                <div class="mx-auto d-none d-md-block">
+                                    <a class="btn btn-outline-light rounded rounded-pill m-2"
+                                        data-mdb-ripple-color="light" href="#myFormHeading fs-6 fw-bold">Learn More <i
+                                            class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                                    <a class="btn btn-light rounded rounded-pill m-2" data-mdb-ripple-color="light"
+                                        href="#myFormHeading">
+                                        Get Quote <i class="fas fa-briefcase ms-1"></i></a>
+                                </div>
+                                <div class="mx-auto px-3 d-block d-md-none">
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="{% url 'userAbout' %}">Learn More <i
+                                            class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="#myFormHeading">Get Quote <i
+                                            class="fas fa-briefcase ms-1"></i></a>
+                                    <a class="btn btn-outline-light rounded rounded-pill col-12 mb-3"
+                                        data-mdb-ripple-color="light" href="{% url 'userToken' %}">Track Work Progress
+                                        <i class="fas fa-briefcase-clock ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Inner -->
+
+                <!-- Controls -->
+                <button class="carousel-control-prev d-none" type="button" data-mdb-target="#carouselMaterialStyle"
+                    data-mdb-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next d-none" type="button" data-mdb-target="#carouselMaterialStyle"
+                    data-mdb-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
+            <!-- Carousel wrapper -->
+        </div>
+    </div>
+    <!-- Background image laptop-->
+
+    <!-- Background image mobile-->
+    {% comment %} <div class="d-md-none d-block mb-5">
+        <div class="carousel slide carousel-fade mb-3" data-mdb-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Inner -->
+            <div class="carousel-inner">
+                <!-- Single item -->
+                <div class="carousel-item active">
+                    <img src="{% static 'userPage/img/HomeImg/1.jpg' %}" class="d-block w-100" alt="" />
+                </div>
+
+                <!-- Single item -->
+                <div class="carousel-item">
+                    <img src="{% static 'userPage/img/HomeImg/2.jpg' %}" class="d-block w-100" alt="" />
+                </div>
+
+                <!-- Single item -->
+                <div class="carousel-item">
+                    <img src="{% static 'userPage/img/HomeImg/7.jpg' %}" class="d-block w-100" alt="" />
+                </div>
+            </div>
+            <!-- Inner -->
+
+            <!-- Controls -->
+            <button class="carousel-control-prev d-none" type="button" data-mdb-target="#carouselBasicExample"
+                data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next d-none" type="button" data-mdb-target="#carouselBasicExample"
+                data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="mb-3 px-3">
+            <div class="border border-1 border-dark col-12" style="opacity:0.8;z-index:1;">
+                <h6 class="fw-bolder my-auto py-3 px-2 text-center text-dark fs-5"
+                    style="font-family: 'Raleway', sans-serif; font-weight: bolder!important;;">BUILD-EASY <span
+                        class="fw-bold" style="color:rgb(255, 0, 0);">ASSOCIATES</span></h6>
+            </div>
+        </div>
+        <div class="mb-2 px-3">
+            <small class="mb-3 mx-auto fw-bold d-block ls-tight lh-base text-center"
+                style="font-family: 'Raleway', sans-serif;">Service provider for all kind of Civil, Architectural and
+                Interior Designing Works.</small>
+            <div class="mx-auto">
+                <a class="btn btn-dark rounded rounded-pill col-12 mb-3 py-3" data-mdb-ripple-color="light"
+                    href="{% url 'userAbout' %}">Learn More <i class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                <a class="btn btn-dark rounded rounded-pill col-12 mb-3 py-3" data-mdb-ripple-color="light"
+                    href="#myFormHeading">Get Quote <i class="fas fa-briefcase ms-1"></i></a>
+                <a class="btn btn-dark rounded rounded-pill col-12 mb-3 py-3" data-mdb-ripple-color="light"
+                    href="{% url 'userToken' %}">Track Work Progress <i class="fas fa-briefcase-clock ms-1"></i></a>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    <!-- Background image mobile-->
+
+</header>
+
+<div id="below" class="container">
+    <div class="row">
+        <div class="col-12 col-md-4 d-flex justify-content-center align-items-center bg-dark px-3 py-0 text-light">
+            <div class="d-none d-md-block">
+                <h1 class="display-4 fw-bolder text-center p-0 m-0">10+</h1>
+                <h1 class="display-4 fw-normal text-center">Years</h1>
+                <h1 class="display-5 fw-light text-center">EXPERIENCE</h1>
+            </div>
+            <div class="d-md-none d-block py-3">
+                <h2 class="fw-bolder text-center lh-base p-0 m-0">10+ Years</h2>
+                <h3 class="fw-light text-center">EXPERIENCE</h3>
+            </div>
+        </div>
+        <div class="d-none d-md-block col-md-4 d-flex justify-content-center align-items-center py-md-4 px-md-4">
+            <div>
+                <h3 class="fw-light mb-4" style="letter-spacing: 20px;">WELCOME!</h3>
+                <h2 class="display-6 mb-4 fw-lighter">SECRETS OF SUCCESS</h2>
+                <h2 class="display-5 fw-bold">OF OUR PROJECTS</h2>
+            </div>
+        </div>
+        <div class="d-block d-md-none text-start col-12 pt-4">
+            <div>
+                <h6 class="fw-light mb-2" style="letter-spacing: 10px;">WELCOME!</h6>
+                <h4 class="mb-2 fw-normal">SECRETS OF SUCCESS</h4>
+                <h4 class="fw-bold">OF OUR PROJECTS</h4>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+            <div>
+                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">BUILD- EASY ASSOCIATES is an
+                    architectural firm that deals with all kinds of Civil, Architectural, and Interior Designing Works.
+                    Our design philosophy is to find simplicity in complexity and to create in order to inspire. Here,
+                    we are constantly investigating the fundamental problems of space, proportion, light, and elements.
+                    Our mission is to change the industry's perception of the design
+                    standard, and it starts with you. Our civil and architectural engineers are here to support
+                    you through design and in the field to ensure your dreams materialize, are safe, and are allowable
+                    by code.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-md-5 my-4" id="homeProjects" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-4 d-flex justify-content-start align-items-center mb-3">
+            <div class="d-none d-md-block">
+                <h5 class="fw-light" style="letter-spacing:20px;">WORKS</h5>
+                <h1 class="display-5 fw-light">OUR DONE <span class="fw-bold">PROJECTS</span></h1>
+                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">With collective professional experience
+                    containing
+                    a wide range of design types such as residential, commercial, and mixed-use facilities.</p>
+                <a href="{% url 'userProjects' %}" class="mb-5">View All Projects <i
+                        class="fas fa-long-arrow-alt-right ms-1"></i></a>
+            </div>
+            <div class="d-block d-md-none">
+                <h6 class="fw-light" style="letter-spacing:10px;">WORKS</h6>
+                <h4 class="fw-light">OUR DONE <span class="fw-bold">PROJECTS</span></h4>
+                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">With collective professional experience
+                    containing
+                    a wide range of design types such as residential, commercial, and mixed-use facilities.</p>
+                <a href="{% url 'userProjects' %}" class="mb-5">View All Projects <i
+                        class="fas fa-long-arrow-alt-right ms-1"></i></a>
+            </div>
+        </div>
+        <div class="col-12 col-md-8 d-flex justify-content-center align-items-center">
+            <div>
+                <!-- Carousel wrapper -->
+                <div id="carouselDarkVariant" class="carousel slide carousel-light" data-mdb-ride="carousel">
+                    <!-- Inner -->
+                    <div class="carousel-inner">
+                        <!-- Single item -->
+                        <div class="carousel-item active">
+                            <img src="{% static 'userPage/img/h1.jpg' %}" class="d-block w-100" alt="Motorbike Smoke" />
+                            <div class="carousel-caption mx-auto bg-dark h-25"
+                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                            <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
+                                style="max-width:400px;position: absolute;">
+                                <div class="text-start d-flex justify-content-center align-items-center position-absolute"
+                                    style="z-index: 2;">
+                                    <div>
+                                        <h4 class="ms-2 ms-md-2 mt-1 d-none d-md-block"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">1</span><span
+                                                class="fw-light text-light">Mixed-Use Building</span></h4>
+                                        <h6 class="ms-1 ms-md-3 mt-1 d-block d-md-none"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">1</span><span
+                                                class="fw-light text-light">Mixed-Use Building</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single item -->
+                        <div class="carousel-item">
+                            <img src="{% static 'userPage/img/h2.jpg' %}" class="d-block w-100" alt="Mountaintop" />
+                            <div class="carousel-caption mx-auto bg-dark h-25"
+                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                            <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
+                                style="max-width:400px;position: absolute;">
+                                <div class="text-start d-flex justify-content-center align-items-center position-absolute"
+                                    style="z-index: 2;">
+                                    <div>
+                                        <h4 class="ms-2 ms-md-2 mt-1 d-none d-md-block"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">2</span><span
+                                                class="fw-light text-light">Residential Projects</span></h4>
+                                        <h6 class="ms-1 ms-md-3 mt-1 d-block d-md-none"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">2</span><span
+                                                class="fw-light text-light">Residential Projects</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single item -->
+                        <div class="carousel-item">
+                            <img src="{% static 'userPage/img/h3.jpg' %}" class="d-block w-100"
+                                alt="Woman Reading a Book" />
+                            <div class="carousel-caption mx-auto bg-dark h-25"
+                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                            <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
+                                style="max-width:400px;position: absolute;">
+                                <div class="text-start d-flex justify-content-center align-items-center position-absolute"
+                                    style="z-index: 2;">
+                                    <div>
+                                        <h4 class="ms-2 ms-md-2 mt-1 d-none d-md-block"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">3</span><span
+                                                class="fw-light text-light">Residential Projects</span></h4>
+                                        <h6 class="ms-1 ms-md-3 mt-1 d-block d-md-none"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">3</span><span
+                                                class="fw-light text-light">Residential Projects</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single item -->
+                        <div class="carousel-item">
+                            <img src="{% static 'userPage/img/h4.jpg' %}" class="d-block w-100"
+                                alt="Woman Reading a Book" />
+                            <div class="carousel-caption mx-auto bg-dark h-25"
+                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                            <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
+                                style="max-width:400px;position: absolute;">
+                                <div class="text-start d-flex justify-content-center align-items-center position-absolute"
+                                    style="z-index: 2;">
+                                    <div>
+                                        <h4 class="ms-2 ms-md-2 mt-1 d-none d-md-block"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">4</span><span
+                                                class="fw-light text-light">Residential Projects</span></h4>
+                                        <h6 class="ms-1 ms-md-3 mt-1 d-block d-md-none"><span
+                                                class="bg-light px-3 py-2 me-2 me-md-3 text-dark">4</span><span
+                                                class="fw-light text-light">Residential Projects</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Inner -->
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant"
+                        data-mdb-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant"
+                        data-mdb-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Carousel wrapper -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-md-5 my-4" id="homeDisplay" />
+
+<div class="container-fluid bgImgFirst">
+    <div class="row mx-auto py-5 d-flex justify-content-center align-items-center">
+        <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
+                class="fas fa-2x p-2 m-2 fa-city rounded-circle bg-dark "></i>
+            <h1>100+</h1>
+            <h5 class="fw-lighter ls-wider">Projects</h5>
+        </div>
+        <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
+                class="fas fa-2x p-2 m-2 fa-user-alt rounded-circle bg-dark text-light"></i>
+            <h1>200+</h1>
+            <h5 class="fw-lighter ls-wider">Employees</h5>
+        </div>
+        <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
+                class="fas fa-2x p-2 m-2 fa-hard-hat rounded-circle bg-dark text-light"></i>
+            <h1>150+</h1>
+            <h5 class="fw-lighter ls-wider">Clients</h5>
+        </div>
+        <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
+                class="fas fa-2x p-2 m-2 fa-handshake rounded-circle bg-dark text-light"></i>
+            <h1>50+</h1>
+            <h5 class="fw-lighter ls-wider">Partners</h5>
+        </div>
+        <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
+                class="fas fa-2x p-2 m-2 fa-location rounded-circle bg-dark text-light"></i>
+            <h1>20+</h1>
+            <h5 class="fw-lighter ls-wider">Cities</h5>
+        </div>
+        <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
+                class="fas fa-2x p-2 m-2 fa-timeline rounded-circle bg-dark text-light"></i>
+            <h1>10+</h1>
+            <h5 class="fw-lighter ls-wider">Years</h5>
+        </div>
+    </div>
+</div>
+
+<hr class="my-md-5 my-4" id="homeTeams" />
+
+<div class="container">
+    <div class="row d-flex justify-content-around align-items-center px-0">
+        <div class="col-12 col-md-7 mt-4 mb-md-0">
+            <div class="row pe-md-2 px-0 pt-2 d-flex justify-content-start align-items-center">
+                <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0">
+                    <div class="card">
+                        <img src="{% static 'userPage/img/man.png' %}" height="150" width="150"
+                            class="mx-auto rounded rounded-circle" style="opacity:0.8;" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-center">Name One</h5>
+                            <h6 class="card-title fw-normal text-center">Lead Engineer</h6>
+                            <hr>
+                            <p class="card-text fw-bold" style="font-size: small;">Some quick example text to build on
+                                the card title.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-7 mb-4 mb-md-0">
+                    <div class="d-none d-md-block">
+                        <h5 class="fw-light" style="letter-spacing:20px;">TEAM</h5>
+                        <h1 class="display-5 fw-light">THE <span class="fw-bold">FOUNDER</span></h1>
+                        <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">We are an interdisciplinary
+                            design firm focused on
+                            producing results and a type of integrative design known for simplifying complex nature,
+                            maximizing
+                            resource utilization, and creating positive experiences.</p>
+                        <a href="{% url 'userAbout' %}" class="mb-5">View All Team Members <i
+                                class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                    </div>
+                    <div class="d-block d-md-none">
+                        <h6 class="fw-light" style="letter-spacing:10px;">TEAM</h6>
+                        <h4 class="fw-light">THE <span class="fw-bold">FOUNDER</span></h4>
+                        <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">We are an interdisciplinary
+                            design firm focused on
+                            producing results and a type of integrative design known for simplifying complex nature,
+                            maximizing
+                            resource utilization, and creating positive experiences.</p>
+                        <a href="{% url 'userAbout' %}" class="mb-5">View All Team Members <i
+                                class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="d-md-none d-block">
+        <div class="col-12 col-md-5 mt-2 mt-md-0">
+            <div class="row px-0 pt-2 d-flex justify-content-center align-items-center">
+                <!-- Carousel wrapper -->
+                <div id="carouselDarkVariant" class="carousel slide carousel-light" data-mdb-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-mdb-target="carouselDarkVariant" data-mdb-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <!-- Inner -->
+                    <div class="carousel-inner">
+                        <!-- Single item -->
+                        <div class="carousel-item active" data-mdb-interval="15000">
+                            <iframe class="w-100" height="330"
+                                src="https://www.youtube.com/embed/gwjQcmpU8UQ?controls=0&autoplay=1&mute=1&loop=1"></iframe>
+                        </div>
+                        <!-- Single item -->
+                        <div class="carousel-item" data-mdb-interval="15000">
+                            <iframe class="w-100" height="330"
+                                src="https://www.youtube.com/embed/1XDZ_HxD8Gk?controls=0&autoplay=1&mute=1&loop=1"></iframe>
+                        </div>
+                    </div>
+                    <!-- Inner -->
+                    <!-- Controls -->
+                    <button class="carousel-control-prev d-none" type="button" data-mdb-target="#carouselDarkVariant"
+                        data-mdb-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next d-none" type="button" data-mdb-target="#carouselDarkVariant"
+                        data-mdb-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Carousel wrapper -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-md-5 my-4" id="homeServices" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-7 d-flex justify-content-center align-items-center mb-3">
+            <div class="row px-0 px-me-2 pt-2">
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-end justify-content-md-start">
+                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Planning.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Planning</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Planning</h6>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Planning.png' %}" height="50" width="50" alt=""></h5>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-md-start">
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Elevation.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Elevation</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Elevation</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-end justify-content-md-start">
+                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Structure Designing.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Structure</h6>
+                        <p class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Structure</p>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Structure Designing.png' %}" height="50" width="50" alt=""></h5>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-md-start">
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Layout.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Layout</h6>
+                        <p class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Layout</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-end justify-content-md-start">
+                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Construction.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Construction</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Construction</h6>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Construction.png' %}" height="50" width="50" alt=""></h5>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-md-start">
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Supervision.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Supervision</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Supervision</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-end justify-content-md-start">
+                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Valuation.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Valuation</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Valuation</h6>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Valuation.png' %}" height="50" width="50" alt=""></h5>
+                    </div>
+                </div>
+
+                
+                <div class="col-6 col-md-4 mb-1">
+                    <div class="d-flex align-items-center justify-content-md-start">
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Interior Designing.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Interior</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Interior</h6>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-1 d-none d-md-block justify-content-md-start">
+                    <div class="d-flex align-items-center">
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Landscaping.png' %}" class="opacity-70" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Landscaping</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Landscaping</h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-5 d-flex justify-content-start align-items-center">
+            <div class="d-none d-md-block">
+                <h5 class="fw-light" style="letter-spacing:10px;">What We Do?</h5>
+                <h1 class="display-5 fw-light">WE OFFER <span class="fw-bold">SERVICES</span></h1>
+                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">We collaborate with our clients on
+                    design concepts
+                    and plans.</p>
+                <a href="{% url 'userServices' %}" class="mb-5">View All Services <i
+                        class="fas fa-long-arrow-alt-right ms-1"></i></a>
+            </div>
+            <div class="d-block d-md-none">
+                <h6 class="fw-light" style="letter-spacing:10px;">What We Do?</h6>
+                <h4 class="fw-light">WE OFFER <span class="fw-bold">SERVICES</span></h1>
+                    <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">We collaborate with our clients on
+                        design
+                        concepts and plans.</p>
+                    <a href="{% url 'userServices' %}" class="mb-5">View All Services <i
+                            class="fas fa-long-arrow-alt-right ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-md-5 my-4" id="homeTestimonial" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-4 d-flex justify-content-start align-items-center mb-3">
+            <div class="d-none d-md-block">
+                <h5 class="fw-light" style="letter-spacing:10px;">TESTIMONIAL</h5>
+                <h1 class="display-5 fw-light">WHAT OUR <br><span class="fw-bold">CLIENTS SAYS</span></h1>
+                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">Even the all-powerful Pointing has no
+                    control
+                    about the blind texts it is an almost unorthographic
+                    life One day however a small line of blind text by the name</p>
+            </div>
+            <div class="d-block d-md-none">
+                <h6 class="fw-light" style="letter-spacing:10px;">TESTIMONIAL</h6>
+                <h4 class="fw-light">WHAT OUR <span class="fw-bold">CLIENTS SAYS</span></h4>
+                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">Even the all-powerful Pointing has no
+                    control
+                    about the blind texts it is an almost unorthographic
+                    life One day however a small line of blind text by the name</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-8 d-flex justify-content-center align-items-center">
+            <div>
+                <!-- Carousel wrapper -->
+                <div id="carouselExampleControls" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card mb-3 p-md-2 p-0" style="max-width: 100vw;">
+                                <span class="position-absolute top-0 left-0"><i class="fas fa-2x fa-quote-left"></i></span>
+                                <div class="row g-0 p-md-4 p-0">
+                                    <div class="col-md-4">
+                                        <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png"
+                                            alt="Trendy Pants and Shoes" class="img-fluid rounded-3 h-100" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Client Name 1</h5>
+                                            <p class="card-text">
+                                                This is a wider card with supporting text below as a natural lead-in to
+                                                additional content. This content is a little bit longer.
+                                            </p>
+                                            <p class="card-text">
+                                                <small class="text-muted">Date - 08/06/2022</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card mb-3 p-md-2 p-0" style="max-width: 100vw;">
+                                <span class="position-absolute top-0 left-0"><i
+                                        class="fas fa-2x fa-quote-left"></i></span>
+                                <div class="row g-0 p-md-4 p-0">
+                                    <div class="col-md-4">
+                                        <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png"
+                                            alt="Trendy Pants and Shoes" class="img-fluid rounded-3 h-100" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Client Name 2</h5>
+                                            <p class="card-text">
+                                                This is a wider card with supporting text below as a natural lead-in to
+                                                additional content. This content is a little bit longer.
+                                            </p>
+                                            <p class="card-text">
+                                                <small class="text-muted">Date - 08/06/2022</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card mb-3 p-md-2 p-0" style="max-width: 100vw;">
+                                <span class="position-absolute top-0 left-0"><i
+                                        class="fas fa-2x fa-quote-left"></i></span>
+                                <div class="row g-0 p-md-4 p-0">
+                                    <div class="col-md-4">
+                                        <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png"
+                                            alt="Trendy Pants and Shoes" class="img-fluid rounded-3 h-100" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Client Name 3</h5>
+                                            <p class="card-text">
+                                                This is a wider card with supporting text below as a natural lead-in to
+                                                additional content. This content is a little bit longer.
+                                            </p>
+                                            <p class="card-text">
+                                                <small class="text-muted">Date - 08/06/2022</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev d-none" type="button"
+                        data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next d-none" type="button"
+                        data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Carousel wrapper -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-md-5 my-4" id="myFormHeading" />
+
+<h1 class="text-center fw-light display-5">Enter Details Here..</h1>
+
+<form class="container my-md-5 my-4 col-md-9 col-12 px-md-0" method="POST" action="{% url 'userHome' %}" id="myForm">
+    {% csrf_token %}
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="name" name="name" class="form-control" required />
+        <label class="form-label">Enter Your Name</label>
+    </div>
+
+    <!-- Phone input -->
+    <div class="form-outline mb-4">
+        <input type="phone" id="phone" name="phone" class="form-control" required />
+        <label class="form-label">Enter Your Phone No. (10 digits)</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="email" name="email" class="form-control" />
+        <label class="form-label">Enter Your Valid Email ID</label>
+    </div>
+
+    <!-- Address input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="address" name="address" class="form-control" required />
+        <label class="form-label">Enter Your Permanent Address</label>
+    </div>
+
+    <!-- PlotSize input -->
+    <div class="form-outline mb-4">
+        <input type="number" id="plotsize" name="plotsize" class="form-control" required />
+        <label class="form-label">Enter Plot Size (in Sqft.)</label>
+    </div>
+
+    <!-- ApproxPlotSize input -->
+    <div class="form-outline mb-4">
+        <input type="number" id="approxplotsize" name="approxplotsize" class="form-control" required />
+        <label class="form-label">Enter Super built-up area (in Sqft.)</label>
+    </div>
+
+    <!-- NumOfFloors input -->
+    <div class="form-outline mb-4">
+        <input type="number" id="numfloor" name="numfloor" class="form-control" required />
+        <label class="form-label">Enter Number of floors</label>
+    </div>
+
+    <!-- PlotLocation input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="plotaddress" name="plotaddress" class="form-control" required />
+        <label class="form-label">Enter Plot Address</label>
+    </div>
+
+    <!-- Description input -->
+    <div class="form-outline mb-4">
+        <textarea class="form-control" id="prodesc" name="prodesc" rows="3"></textarea>
+        <label class="form-label">Enter Project Description...</label>
+    </div>
+
+    <!-- Service input -->
+    <div class="form-outline mb-4 border border-3 rounded-2 p-3">
+        <h6>Which services you want to take???</h6>
+        <div class="row px-3">
+            {% if service %}
+            {% for s in service %}
+            {% if s.name == 'PMC' %}
+            <div class="form-check col-12 col-md-3">
+                <input class="form-check-input PMCbox" type="checkbox" name="service" value="{{s.id}}"
+                    id="{{s.cost}}" />
+                <label class="form-check-label">{{s.name}}</label>
+            </div>
+            {% elif s.name == 'Supervision' %}
+            <div class="form-check col-12 col-md-3">
+                <input class="form-check-input Supervisionbox" type="checkbox" name="service" value="{{s.id}}"
+                    id="{{s.cost}}" />
+                <label class="form-check-label">{{s.name}}</label>
+            </div>
+            {% elif s.name == 'Interior Designing' %}
+            <div class="form-check col-12 col-md-3 d-none">
+                <input class="form-check-input Supervisionbox" type="checkbox" name="service" value="{{s.id}}"
+                    id="{{s.cost}}" />
+                <label class="form-check-label">{{s.name}}</label>
+            </div>
+            {% else %}
+            <div class="form-check col-12 col-md-3">
+                <input class="form-check-input" type="checkbox" name="service" value="{{s.id}}" id="{{s.cost}}" />
+                <label class="form-check-label">{{s.name}}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- Checkbox -->
+    <div class="form-check mb-4">
+        <div class="row p-0 d-none d-md-block">
+            <div class="col-12">
+                <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior"
+                    data-mdb-toggle="modal" href="#exampleModalToggle1" />
+                <label class="form-check-label">
+                    Check out this if Interior required.
+                </label>
+            </div>
+            <div class="col-12">
+                <input class="form-check-input me-2" type="checkbox" name="basement" value="yes" id="basement"
+                    data-mdb-toggle="modal" href="#exampleModalToggle2" />
+                <label class="form-check-label">
+                    Check out this if Basement required.
+                </label>
+            </div>
+            <div class="col-12">
+                <input class="form-check-input me-2" type="checkbox" name="emailsend" value="yes" id="emailsend" />
+                <label class="form-check-label">
+                    Send me a copy of this form via Email.
+                </label>
+            </div>
+        </div>
+        <div class="row p-0 d-md-none d-block">
+            <div class="col-10">
+                <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior"
+                    data-mdb-toggle="modal" href="#exampleModalToggle1" />
+                <label class="form-check-label" style="font-size: small;">
+                    Check out this if Interior required.
+                </label>
+            </div>
+            <div class="col-10">
+                <input class="form-check-input" type="checkbox" name="basement" value="yes" id="basement"
+                    data-mdb-toggle="modal" href="#exampleModalToggle2" />
+                <label class="form-check-label" style="font-size: small;">
+                    Check out this if Basement required.
+                </label>
+            </div>
+            <div class="col-10">
+                <input class="form-check-input" type="checkbox" name="emailsend" value="yes" id="emailsend" />
+                <label class="form-check-label" style="font-size: small;">
+                    Send me a copy of this form via Email.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cost output -->
+    <div class="row mx-0">
+        <div class="form-outline mb-4 col-8 p-0">
+            <input type="text" id="estimatedcost" class="form-control" disabled />
+            <label class="form-label" id="estimatedcostlabel">Your Estimated Cost is...</label>
+        </div>
+        <div class="form-outline mb-4 col-4 p-0 float-end">
+            <button type="button" id="estimateCost" class="btn btn-success w-100">Calculate</button>
+        </div>
+    </div>
+
+    <!-- First modal dialog -->
+    <div class="modal fade" id="exampleModalToggle1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel1">Enter Proposed Area for Interior (in Sqft.)
+                    </h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-outline border rounded">
+                        <input type="number" id="interiorArea" name="interiorArea" class="form-control" />
+                        <label class="form-label">Enter Proposed Area for Interior (in Sqft.)</label>
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second modal dialog -->
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2">Enter Built-Up Area For Basement (in Sqft.)
+                    </h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-outline border rounded">
+                        <input type="number" id="basementArea" name="basementArea" class="form-control" />
+                        <label class="form-label">Enter Built-Up Area (in Sqft.)</label>
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit button -->
+    <button id="submitBtn" class="btn btn-primary btn-block mb-4">
+        Submit
+    </button>
+</form>
+
+<script>
+
+    $(document).ready(function () {
+
+        $(".Supervisionbox").change(function () {
+            if (this.checked) {
+                $('.PMCbox').prop('checked', false);
+                // console.log("Supervision");
+            }
+        });
+
+        $(".PMCbox").change(function () {
+            if (this.checked) {
+                $('.Supervisionbox').prop('checked', false);
+                // console.log("PMC");
+            }
+        });
+
+        $("#submitBtn").click(function () {
+            checked = $("input[type=checkbox]:checked").length;
+            //console.log(checked);
+            if (!checked) {
+                alert("You must check at least one service.");
+                return false;
+            } else {
+                $("#myFrom").submit();
+            }
+        });
+
+        $('#estimateCost').click(function () {
+            let landSize = $('#approxplotsize').val();
+            let interiorArea = $('#interiorArea').val();
+            let basementArea = $('#basementArea').val();
+            let floor = $('#numfloor').val();
+
+            let basement = $("#basement").is(':checked');
+            let interior = $("#interior").is(':checked');
+
+            let projectCost = landSize * floor * 1450;
+            let basementCost = basementArea * 1850 * 0.055;
+            let interiorCost = interiorArea * (40);
+            let estimateCost = 0;
+
+            // console.log(projectCost);
+            // console.log(landSize);
+            // console.log(interiorArea);
+
+            checked = $("input[name='service']:checked");
+
+            if (landSize == null || landSize == "") {
+                alert("Please Enter the Built-up Area.");
+                return false;
+            }
+            else if (floor == 0) {
+                alert("Please Enter the no. of floors");
+                return false;
+            }
+            else if (!checked.length && !interiorArea && !basement) {
+                alert("You must check at least one service.");
+                return false;
+            }
+            else {
+
+                for (let i = 0; i < checked.length; i++) {
+                    //console.log(checked[i].id);
+                    if (checked[i].id >= 100) {
+                        estimateCost += (checked[i].id) * 1;
+                    } else {
+                        estimateCost += (projectCost * checked[i].id) / 100;
+                    }
+                }
+
+                if (interior && interiorCost != 0) {
+                    estimateCost += interiorCost;
+                }
+
+                if (basement && basementCost != 0) {
+                    estimateCost += basementCost;
+                }
+
+                $('#estimatedcostlabel').hide();
+                $('#estimatedcost').val("( " + estimateCost + " - " + (estimateCost + (estimateCost * 0.10)).toFixed() + " )" + " Rs/-");
+            }
+        })
+
+    });
+
+</script>
+{% endblock content %}

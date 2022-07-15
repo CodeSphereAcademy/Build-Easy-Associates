@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{% static 'userPage/img/archiFirmLogo.png' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet" />
+    <title>BUILD-EASY ASSOCIATES</title>
+    <style>
+
+        nav,footer{
+            display: none!important;
+        }
+    
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            font: 12pt "Tahoma";
+        }
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .subpage {
+            padding: 1cm;
+            border: 5px red solid;
+            height: 257mm;
+            outline: 2cm #FFEAEA solid;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        @media print {
+            html, body {
+                width: 210mm;
+                height: 297mm;        
+            }
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+    
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+        }
+    
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+    
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem;
+        }
+    
+        .gutters-sm {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+    
+        .gutters-sm>.col, .gutters-sm>[class*=col-] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+        .mb-3, .my-3 {
+            margin-bottom: 1rem!important;
+        }
+    
+        .bg-gray-300 {
+            background-color: #e2e8f0;
+        }
+        .h-100 {
+            height: 100%!important;
+        }
+        .shadow-none {
+            box-shadow: none!important;
+        }
+    </style>
+</head>
+<body>
+    <div id="genratePdf" class="book">
+        <div class="text-center mx-auto page">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <div class="row text-start">
+                    <div class="mb-3 top-0">
+                        <div class="card-body text-center" style="margin-top: -60px;">
+                            <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-3 " width="80%">
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-3">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="100">
+                        </div>
+                        <div class="col-9">
+                            <div class="my-3">
+                                <h4>{{client.name}}</h4>
+                                <p class="text-secondary">+91-{{client.phone}}</p>
+                                <p class="text-muted font-size-sm">{{client.address}}</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="d-flex align-items-center mb-3 fw-bold">Personal Details</p>
+                            <div class="border py-1"><small>Name: <span class="text-primary">{{client.name}}</span></small></div>
+                            <div class="border py-1"><small>Mobile: <span class="text-primary">{{client.phone}}</span></small></div>
+                            <div class="border py-1"><small>Email: <span class="text-primary">{{client.email}} email@gmail.com</span></small></div>
+                            <div class="border py-1"><small>Address: <span class="text-primary">{{client.address}}</span></small></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="d-flex align-items-center mb-3 fw-bold">Project Details</p>
+                            <div class="border py-1"><small>Project Cost: <span class="text-primary">{{client.totalCost}} Rs.</span></small></div>
+                            <div class="border py-1"><small>Plot Size: <span class="text-primary">{{client.plotSize}} Sqft.</span></small></div>
+                            <div class="border py-1"><small>Location: <span class="text-primary">{{client.plotAddress}}</span></small></div>
+                            <div class="border py-1"><small>Description: <span class="text-primary">{{client.projectDescription}}</span></small></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card mb-3 col-6">
+                        <div class="card-body">
+                        <p class="d-flex align-items-center mb-3 fw-bold">Services Opted</p>
+                        <div class="row">
+                            {% for service in client.serviceOpted.all %}
+                            <div class="border py-1"><small>{{service.name}}</small></div>
+                            {% endfor %}
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 col-6">
+                        <div class="card-body">
+                            <p class="d-flex align-items-center mb-3 fw-bold">Project Status</p>
+                            <div class="row">
+                            {% for post in posts %}
+                            <div class="border py-1"><small>#{{forloop.counter}} - {{post.detail}} / {{post.publishDate}}</small></div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Gallery -->
+        <div>
+        {% if posts %}
+        {% for post in posts %}
+        <div class="col-12 page">
+            <h1>Post#{{forloop.counter}}</h1>
+            <h3> {{post.detail}} / {{post.publishDate}}</h3>
+            <p>This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.</p>
+            <div class="row px-0 mb-3">
+                <div class="col-6">
+                    <img src="{{post.pic1.url}}" class="img-fluid rounded"/>
+                </div>
+                <div class="col-6">
+                    <img src="{{post.pic2.url}}" class="img-fluid rounded"/>
+                </div>
+            </div>
+            <div class="row px-0 mb-3">
+                <div class="col-6">
+                    <img src="{{post.pic3.url}}" class="img-fluid rounded"/>
+                </div>
+                <div class="col-6">
+                    <img src="{{post.pic4.url}}" class="img-fluid rounded"/>
+                </div>
+            </div>
+            <div class="row px-0 mb-3">
+                <div class="col-6">
+                    <img src="{{post.pic1.url}}" class="img-fluid rounded"/>
+                </div>
+                <div class="col-6">
+                    <img src="{{post.pic2.url}}" class="img-fluid rounded"/>
+                </div>
+            </div>
+            <div class="row px-0">
+                <div class="col-6">
+                    <img src="{{post.pic3.url}}" class="img-fluid rounded"/>
+                </div>
+                <div class="col-6">
+                    <img src="{{post.pic4.url}}" class="img-fluid rounded"/>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h1 class="text-center my-3 p-5">No Posts available!!!</h1>
+        {% endif %}
+        </div>
+        <div class="page">
+            <div class="text-center" style="margin-top: 60%;">
+                <h1 class="display-1">Thank You</h1>
+                <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-3 " width="60%">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.title='{{client.name}}';
+        window.print();
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
+</body>
+</html>

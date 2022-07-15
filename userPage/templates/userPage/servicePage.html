@@ -1,0 +1,57 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<div class="container" style="max-width:1000px;">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>
+            <h1 class="text-start py-3" id="below">New Service Deatils</h1>
+        </div>
+    </div>
+    <form action="{% url 'servicePage' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="custom-file mb-4">
+            <label class="form-label">Select Icon for Service</label>
+            <input type="file" name="serviceIcon" class="form-control" id="serviceIcon" accept="image/*" required/>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" name="serviceName" id="serviceName" class="form-control" required/>
+            <label class="form-label" for="serviceName">Enter Service Name</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="number" name="serviceCost" id="serviceCost" class="form-control" required/>
+            <label class="form-label" for="serviceCost">Enter Service Cost (in Percentage)</label>
+        </div>
+        
+        <div class="form-outline mb-4">
+            <textarea class="form-control" name="serviceDetail" id="serviceDetail" rows="2" required></textarea>
+            <label class="form-label" for="serviceDetail">Enter Service details</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block mb-4">Add Service</button>
+    </form>
+    <hr class="my-3">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>
+            <h1 class="text-start py-3" id="below">Our Services</h1>
+        </div>
+    </div>
+    <div class="row mx-auto mx-0 my-3 px-0">
+        {% for service in services %}
+        <div class="col-12 col-md-3 mb-3 px-0 px-md-1">
+          <div class="card shadow">
+            <img src="{{service.pic.url}}" class="d-block w-100 card-img-top" style="background-color: rgb(136, 136, 136, 0.5);" alt="first" /> 
+            <div class="card-body px-3 pb-0">
+                <h6 class="card-title fw-bold">{{service.name}}</h6>
+                <p class="card-text">{{service.details}}</p>
+            </div>
+            <hr class="mb-0">
+            <ul class="mt-1 list-group list-group-light list-group-small">
+                <li class="list-group-item px-3" style="font-size: small;"><b>Pricing:</b> {{service.cost}}% of project cost</li>
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

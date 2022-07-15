@@ -1,0 +1,101 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<header>
+    <div class="text-center" style="height: 100vh;">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.9)">
+            <div>
+                <img src=""
+                    style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/1.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: 100vw 100vh;filter: blur(4px) grayscale(100%);"
+                    class="d-md-block d-none mx-auto" />
+                <img src=""
+                    style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/1.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: cover;filter: blur(4px) grayscale(100%);"
+                    class="d-block d-md-none mx-auto" />
+                <div class="carousel-caption d-flex justify-content-center align-items-center"
+                    style="height:100vh; left:0%; right:0%;">
+                    <div class="mt-5 py-3 bg-dark opacity-70">
+                        <h1 class="mb-2 fw-bold" style="font-family: 'Raleway', sans-serif;">AB<span style="color:rgb(230, 0, 0);">OUT</span></h1>
+                        <hr>
+                        <p class="mb-4 fw-normal px-3"
+                            style="font-family: 'Raleway', sans-serif;text-align: justify; max-width: 450px; font-size: small;">
+                            Build-easy-Associates firm was started with the idea of disrupting
+                            the AEC industry with a more responsive approach to the client’s
+                            needs, whether B2B or B2C. Core design businesses of today are
+                            either very large publicly traded firms or small boutique
+                            businesses. We use technology to manage processes like large firms,
+                            but simultaneously give our clients the personal attention boutique
+                            businesses are famous for. We brought a start-up approach to a
+                            professional engineering and architectural design company, and our
+                            team shares that drive. - Shailesh Kumar Kanwar, Founder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container mt-0 mb-5">
+    <h1>About</h1>
+    <h1 class="fw-bold my-2">Build-Easy Associates</h1>
+    <p class="fw-light fs-6 ls-tight" style="text-align: justify">
+        Founded in 2017, Build-Easy-Associates was created with the mission to
+        support in-field construction engineering and architectural design. The
+        founders' mission was to change the industry's perception of the structural
+        and architectural engineering standard, in service, quality, and expertise.
+        You can't design quality concrete structures if you don't know how to form it.
+        We're motivated by client satisfaction and quick submittal processes so we enjoy
+        sharing our expertise to make your project as smooth as possible.
+        <br /><br />
+        Since our start, we have grown from two engineers to forty engineering and
+        architecture professionals, and from one office to four. For two years
+        running, we’ve made the Inc 500 list for Fastest-Growing Private Companies
+        in America, ranking 446 in 2018, 213 in 2019, and ranking number 1 in the
+        Engineering Sector. This growth is a byproduct of our own challenge to be
+        the best. We're willing to try new architectural and home designs, new
+        technologies, new techniques, and try new products and construction
+        materials. Being based in Silicon Valley has influenced our approach to
+        business, architecture, engineering, and how clients should feel about our
+        process.
+    </p>
+</div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-3">
+            <div class="row w-100 text-light border border-1">
+                <div class="col-6 col-md-6 p-4 bg-dark text-center">
+                    <h1 class="fw-bold d-md-block d-none">5+</h1>
+                    <h3 class="fw-bold d-md-none d-block">5+</h3>
+                    <h6 class="fw-light">Years</h6>
+                </div>
+                <div class="col-6 col-md-6 p-4 text-center text-dark">
+                    <h1 class="fw-bold d-md-block d-none">300+</h1>
+                    <h3 class="fw-bold d-md-none d-block">300+</h3>
+                    <h6 class="fw-light">Projects</h6>
+                </div>
+                <div class="col-6 col-md-6 p-4 text-center text-dark">
+                    <h1 class="fw-bold d-md-block d-none">200+</h1>
+                    <h3 class="fw-bold d-md-none d-block">200+</h3>
+                    <h6 class="fw-light">Employees</h6>
+                </div>
+                <div class="col-6 col-md-6 p-4 bg-dark text-center">
+                    <h1 class="fw-bold d-md-block d-none">100K+</h1>
+                    <h3 class="fw-bold d-md-none d-block">100K+</h3>
+                    <h6 class="fw-light">SqFt.</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 d-flex justify-content-start align-items-center my-3">
+            <div>
+                <h5 class="fw-light mb-3" style="letter-spacing: 10px">OUR PRACTICE</h5>
+                <p class="fw-bold fs-2 mb-3">
+                    Hi-tech professionals to barefoot architects
+                </p>
+                <p class="fw-light fs-6 ls-tight" style="text-align: justify">
+                    There must be very few countries in the world where architects have
+                    such varied challenges as we have in India today. Our involvement
+                    ranges from upgradation of slums to large corporate and public
+                    buildings, from low income housing to restoration of magnificent
+                    vernacular and colonial buildings.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

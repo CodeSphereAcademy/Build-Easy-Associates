@@ -1,0 +1,97 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<div>
+    <div class="py-3 text-center">
+        <div class="row container-xl container-fluid mx-auto d-flex justify-content-evenly px-0">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6 py-4 border border-3">
+                <div class="text-start">
+                    <div class="col-12">
+
+                        <div class="row px-0">
+
+                            <div class="col-md-5 col-12">
+                                <div class="text-center pb-3"><img src="{% static 'userPage/img/archiFirmLogo.png' %}"
+                                        class="p-2 bg-dark" style="height:185px;width: 100%;" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-7 col-12 text-center text-md-start">
+                                <h5 class="fw-bold">BUILD-EASY <span style="color:rgb(230, 0, 0);">ASSOCIATES</span></h5>
+                                <small class="fw-bold">Durg | Bhilai | Raipur | Bilaspur | Baster</small><br>
+                                <small class="fw-bold">+91-9399556631, buildeasy01@gmail.com</small><br>
+                                <small>Opening-Closing Time: 9am-8pm</small><br>
+                                <small>Danteshwari vihar colony, in front of shri temple,Near Bandha Talab, Kondagaon,
+                                    (C.G), 494226</small>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <h6 class="fw-bold">Er. Shailesh Kumar Kanwar</h6>
+                        <small>B.E.(Civil), A.M.I.E.(IEI), CAD Designer, Chartered Engineer</small>
+                        <small>M.C.Lic. No.: 235-E(Bhilai), 181(Durg), 22(Kondagaon)</small>
+                        <small>Contact No.: +91-7566655987</small>
+
+                        <hr>
+
+                        <small class="fw-light">Residental | Interior Design | 3D Visualization | Landscaping
+                            Structural Design | Renovation | Estimation | Supervison
+                            Industrial And Commercial Project Management Consultation</small>
+
+                        <hr>
+
+                        <small class="fw-light ls-tight" style="text-align: justify!important;">
+                            Build-easy-Associates firm was started with the idea of disrupting the AEC industry with a
+                            more responsive approach to the client’s needs, whether B2B or B2C. Core design businesses
+                            of today are either very large publicly traded firms or small boutique businesses. We brought 
+                            a start-up approach to a professional engineering and architectural design company, and our 
+                            team shares that drive. - Mr. Kanwar, Founder
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-6 my-auto border border-3">
+                <div>
+                    <h1 class="py-3"> Contact Form </h1>
+                    <form action="{% url 'userContact' %}" method="POST">
+                        {% csrf_token %}
+                        <!-- Name input -->
+                        <div class="form-outline mb-2">
+                            <input type="text" name="name" class="form-control" />
+                            <label class="form-label" for="form4Example1">Enter Your Name</label>
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-2">
+                            <input type="email" name="email" class="form-control" />
+                            <label class="form-label" for="form4Example2">Enter Your Email address</label>
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-2">
+                            <input type="phone" name="phone" class="form-control" />
+                            <label class="form-label" for="form4Example2">Enter Your Mobile Number</label>
+                        </div>
+
+                        <!-- Message input -->
+                        <div class="form-outline mb-3">
+                            <textarea class="form-control" name="msg" rows="2"></textarea>
+                            <label class="form-label" for="form4Example3">Enter Your Message</label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mb-3">Submit</button>
+                    </form>
+                </div>
+                <hr>
+                <div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.0561354561896!2d81.6605517151486!3d19.58209558679958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2fcf6d979690a7%3A0x3ad1f742fe229e33!2sBUILD-EASY%20ASSOCIATES!5e0!3m2!1sen!2sin!4v1654891538539!5m2!1sen!2sin"
+                        class="w-100" height="300" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

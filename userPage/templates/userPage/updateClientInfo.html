@@ -1,0 +1,264 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<div class="container" style="max-width:1000px;">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>
+            <h1 class="text-start py-3" id="below">Update Client's Info</h1>
+        </div>
+    </div>
+    <form method="POST" action="{% url 'updateClientInfo' client.id %}" id="myForm">
+        {% csrf_token %}
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="name" name="name" class="form-control" value="{{client.name}}" required />
+            <label class="form-label">Enter Your Name</label>
+        </div>
+    
+        <!-- Phone input -->
+        <div class="form-outline mb-4">
+            <input type="phone" id="phone" name="phone" class="form-control" value="{{client.phone}}" required />
+            <label class="form-label">Enter Your Phone No. (10 digits)</label>
+        </div>
+    
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <input type="email" id="email" name="email" class="form-control" value="{{client.email}}" />
+            <label class="form-label">Enter Your Valid Email ID</label>
+        </div>
+    
+        <!-- Address input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="address" name="address" class="form-control" value="{{client.address}}" required />
+            <label class="form-label">Enter Your Permanent Address</label>
+        </div>
+    
+        <!-- PlotSize input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="plotsize" name="plotsize" class="form-control" value="{{client.plotSize}}" required />
+            <label class="form-label">Enter Plot Size (in Sqft.)</label>
+        </div>
+    
+        <!-- ApproxPlotSize input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="approxplotsize" name="approxplotsize" class="form-control" value="{{client.builtPlotSize}}" required />
+            <label class="form-label">Enter Super built-up area (in Sqft.)</label>
+        </div>
+    
+        <!-- NumOfFloors input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="numfloor" name="numfloor" class="form-control" value="{{client.noFloors}}" required />
+            <label class="form-label">Enter Number of floors</label>
+        </div>
+    
+        <!-- PlotLocation input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="plotaddress" name="plotaddress" class="form-control" value="{{client.plotAddress}}" required />
+            <label class="form-label">Enter Plot Address</label>
+        </div>
+    
+        <!-- Description input -->
+        <div class="form-outline mb-4">
+            <textarea class="form-control" id="prodesc" name="prodesc" rows="3" value="{{client.projectDescription}}"></textarea>
+            <label class="form-label">Enter Project Description...</label>
+        </div>
+    
+        <!-- Service input -->
+        <div class="form-outline mb-4 border border-3 rounded-2 p-3">
+            <h6>Which services you want to take???</h6>
+    
+            <div class="row px-3">
+                {% if service %}
+                {% for s in service %}
+                <div class="form-check col-12 col-md-3">
+                    <input class="form-check-input" type="checkbox" name="service" value="{{s.id}}" id="{{s.cost}}" />
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+    
+        </div>
+    
+        <!-- Checkbox -->
+        <div class="form-check mb-4">
+            <div class="row p-0 d-none d-md-block">
+                <div class="col-12">
+                    <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior" 
+                        data-mdb-toggle="modal" href="#exampleModalToggle1" />
+                    <label class="form-check-label">
+                        Check out this if Interior required.
+                    </label>
+                </div>
+                <div class="col-12">
+                    <input class="form-check-input me-2" type="checkbox" name="basement" value="yes" id="basement"
+                        data-mdb-toggle="modal" href="#exampleModalToggle2" />
+                    <label class="form-check-label">
+                        Check out this if Basement required.
+                    </label>
+                </div>
+                <div class="col-12">
+                    <input class="form-check-input me-2" type="checkbox" name="emailsend" value="yes" id="emailsend" />
+                    <label class="form-check-label">
+                        Send me a copy of this form via Email.
+                    </label>
+                </div>
+            </div>
+            <div class="row p-0 d-md-none d-block">
+                <div class="col-10">
+                    <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior"
+                        data-mdb-toggle="modal" href="#exampleModalToggle1" />
+                    <label class="form-check-label" style="font-size: small;">
+                        Check out this if Interior required.
+                    </label>
+                </div>
+                <div class="col-10">
+                    <input class="form-check-input" type="checkbox" name="basement" value="yes" id="basement"
+                        data-mdb-toggle="modal" href="#exampleModalToggle2" />
+                    <label class="form-check-label" style="font-size: small;">
+                        Check out this if Basement required.
+                    </label>
+                </div>
+                <div class="col-10">
+                    <input class="form-check-input" type="checkbox" name="emailsend" value="yes" id="emailsend" />
+                    <label class="form-check-label" style="font-size: small;">
+                        Send me a copy of this form via Email.
+                    </label>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Cost output -->
+        <div class="row mx-0">
+            <div class="form-outline mb-4 col-8 p-0">
+                <input type="text" id="estimatedcost" class="form-control" value="{{client.totalCost}}"/>
+                <label class="form-label" id="estimatedcostlabel">Your Estimated Cost is...</label>
+            </div>
+            <div class="form-outline mb-4 col-4 p-0 float-end">
+                <button type="button" id="estimateCost" class="btn btn-success w-100">Calculate</button>
+            </div>
+        </div>
+    
+        <!-- First modal dialog -->
+        <div class="modal fade" id="exampleModalToggle1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel1">Enter Proposed Area for Interior (in Sqft.)</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-outline border rounded">
+                            <input type="number" id="budget" name="budget" class="form-control" />
+                            <label class="form-label">Enter Proposed Area for Interior (in Sqft.)</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Second modal dialog -->
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel2">Enter Built-Up Area For Basement (in Sqft.)</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-outline border rounded">
+                            <input type="number" id="basementArea" name="basmentArea" class="form-control" />
+                            <label class="form-label">Enter Built-Up Area (in Sqft.)</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Submit button -->
+        <button id="submitBtn" class="btn btn-primary btn-block mb-4">
+            Submit
+        </button>
+    </form>
+</div>
+<script>
+
+    $(document).ready(function () {
+
+        $("#submitBtn").click(function () {
+            checked = $("input[type=checkbox]:checked").length;
+            //console.log(checked);
+            if (!checked) {
+                alert("You must check at least one service.");
+                return false;
+            } else {
+                $("#myFrom").submit();
+            }
+        });
+
+        $('#estimateCost').click(function () {
+            let landSize = $('#approxplotsize').val();
+            let interiorArea = $('#budget').val();
+            let basementArea = $('#basementArea').val();
+            let floor = $('#numfloor').val();
+
+            let basement = $("#basement").is(':checked');
+            let interior = $("#interior").is(':checked');
+
+            let projectCost = landSize * floor * 1450;
+            let basementCost = basementArea * 1850 * 0.055;
+            let interiorCost = interiorArea * (40);
+            let estimateCost = 0;
+
+            // console.log(projectCost);
+            // console.log(landSize);
+            // console.log(budget);
+
+            checked = $("input[name='service']:checked");
+
+            if (landSize == null || landSize == "") {
+                alert("Please Enter the Built-up Area.");
+                return false;
+            }
+            else if (floor == 0) {
+                alert("Please Enter the no. of floors");
+                return false;
+            }
+            else if (!checked.length && !interiorArea && !basement) {
+                alert("You must check at least one service.");
+                return false;
+            }
+            else {
+
+                for (let i = 0; i < checked.length; i++) {
+                    //console.log(checked[i].id);
+                    if (checked[i].id >= 100) {
+                        estimateCost += (checked[i].id) * 1;
+                    } else {
+                        estimateCost += (projectCost * checked[i].id) / 100;
+                    }
+                }
+
+                if (interior && interiorCost != 0) {
+                    estimateCost += interiorCost;
+                }
+
+                if (basement && basementCost != 0) {
+                    estimateCost += basementCost;
+                }
+
+                $('#estimatedcostlabel').hide();
+                $('#estimatedcost').val("( " + estimateCost + " - " + (estimateCost + (estimateCost * 0.10)).toFixed() + " )" + " Rs/-");
+            }
+        })
+
+    });
+
+</script>
+{% endblock content %}

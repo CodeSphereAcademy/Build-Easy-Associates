@@ -1,0 +1,117 @@
+{% extends 'userPage/header.html' %}
+{% load static %}
+{% block content %}
+<div class="row d-flex justify-content-between px-0 container mx-auto mt-2">
+    <div class="d-flex justify-content-between align-items-center my-1">
+        <div>
+            <h1 class="text-start py-3" id="below">Posts</h1>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic1.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic1.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if post.pic3 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic3.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.pic4 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic4.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.pic5 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic5.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.pic6 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic6.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.pic7 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic7.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.pic8 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic8.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.pic9 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic9.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.pic10 != '0' %} 
+    <div class="col-12 col-md-6">
+        <div class="card mb-3 shadow shadow-6-strong">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <img src="{{post.pic10.url}}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

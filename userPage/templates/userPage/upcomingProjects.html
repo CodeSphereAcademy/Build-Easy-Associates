@@ -1,0 +1,133 @@
+{% extends 'userPage/header.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid w-100 my-4 ps-1 pe-1" style="overflow-x: auto;" id="clientList">
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th style="width:220px!important;">Name / Phone No.</th>
+                <th style="width:200px!important;">Project Title</th>
+                <th style="width:180px!important;" class="text-center">Project Status</th>
+                <th style="width:180px!important;" class="text-center">Project Dates</th>
+                <th style="width:240px!important;" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        {% for project in projects reversed %}
+        <tbody>
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center" style="width:220px!important;">
+                        <i class="fas fa-user-circle fa-3x" style="width: 45px; height: 45px" class="rounded-circle"></i>
+                        <div class="ms-3">
+                            <p class="fw-bold mb-1">{{project.client.name|truncatewords:2}}</p>
+                            <p class="text-muted mb-0">+91-{{project.client.phone}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center" style="width:200px!important;">
+                        <div>
+                            <p class="fw-bold mb-1">{{project.client.projectTitle}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center justify-content-center mx-auto" style="width:180px!important;">
+                        <div>
+                            <span class="badge badge-success rounded-pill d-inline px-3 py-2">{{project.client.projectStatus}}</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center justify-content-center mx-auto" style="width:180px!important;">
+                        <div>
+                            <p class="mb-1"><span class="fw-bold">Start - </span>{{project.client.projectStartDate}}</p>
+                            <p class="mb-0"><span class="fw-bold">End - </span>{{project.client.projectEndDate}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="text-end">
+                    <div class="d-flex align-items-center justify-content-center mx-auto" style="width:240px!important;">
+                        <div>
+                            <a class="btn btn-outline-success btn-sm btn-rounded" data-mdb-toggle="modal" href="#startModal{{project.client.id}}" role="button">
+                                Start
+                            </a>    
+                            <a class="btn btn-outline-primary btn-sm btn-rounded" data-mdb-toggle="modal" href="#updateModal{{project.client.id}}" role="button">
+                                Update
+                            </a>
+                            <a class="btn btn-outline-dark btn-sm btn-rounded" href="{% url 'clientInfo' project.client.id %}">
+                                View
+                            </a>      
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <!-- First modal dialog -->
+        <div class="modal fade" id="startModal{{project.client.id}}" aria-hidden="true" aria-labelledby="startModalToggleLabel1" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-success">
+                  <h5 class="modal-title fw-bold" id="startModalToggleLabel1">Project Start Confirmation!!!</h5>
+                  <button type="button" class="btn-close fw-bold" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <b>{{project.client.name}}'s</b> project will be started from <b>now</b>.
+                </div>
+                <form action="{% url 'upcomingProjects' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="clientID" value="{{project.client.id}}">
+                    <input type="hidden" name="startNow" value="Yes">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success">Yes, Proceed</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+        </div>
+        <!-- First Next modal dialog -->
+        <div class="modal fade" id="updateModal{{project.client.id}}" aria-hidden="true" aria-labelledby="updateModalToggleLabel3" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title fw-bold text-light" id="updateModalToggleLabel3">Update Details.</h5>
+                    <button type="button" class="btn-close fw-bold" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST" action="{% url 'upcomingProjects' %}">
+                    {% csrf_token %}
+                    <div class="modal-body"> 
+                        <input type="hidden" id="clientID" name="clientID" value="{{project.client.id}}"/>
+                        <div class="form-outline mb-3">
+                            <input type="date" id="startDate" name="startDate" class="form-control preDate" value="{{project.client.projectStartDate|date:'Y-m-d'}}" required/>
+                            <label class="form-label" for="startDate">Enter new Start Date</label>
+                        </div>
+                        <div class="form-outline">
+                            <input type="date" id="endDate" name="endDate" class="form-control preDate" value="{{project.client.projectEndDate|date:'Y-m-d'}}" required/>
+                            <label class="form-label" for="endDate">Enter new End Date</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </table>
+</div>
+<script>
+    var dtToday = new Date();
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    var maxDate = year + '-' + month + '-' + day;
+    $('.preDate').attr('min', maxDate);
+</script>
+{% endblock content %}

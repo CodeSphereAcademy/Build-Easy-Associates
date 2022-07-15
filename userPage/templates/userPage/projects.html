@@ -1,0 +1,76 @@
+{% extends 'userPage/header.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid w-100 my-4 ps-1 pe-1" style="overflow-x: auto;" id="clientList">
+    <!-- Image and text -->
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th style="width:240px!important;">Client Name</th>
+                <th style="width:180px!important;">Client Mob no.</th>
+                <th style="width:240px!important;">Project Title</th>
+                <th style="width:120px!important;">Project Status</th>
+                <th style="width:180px!important;">Project Start</th>
+                <th style="width:120px!important;" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        {% for project in projects reversed %}
+        <tbody>
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center" style="width:240px!important;">
+                        <i class="fas fa-user-circle fa-3x" style="width: 45px; height: 45px" class="rounded-circle"></i>
+                        <div class="ms-3">
+                            <p class="fw-bold mb-1">{{project.client.name}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center" style="width:180px!important;">
+                        <div>
+                            <p class="fw-bold mb-1">+91-{{project.client.phone}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center" style="width:240px!important;">
+                        <div>
+                            <p class="fw-normal mb-1">{{project.projectTitle}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center" style="width:180px!important;">
+                        <div>
+                            <span class="badge badge-success rounded-pill d-inline px-3 py-2">{{project.projectStatus}}</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center" style="width:120px!important;">
+                        <div>
+                            <p class="mb-0"><span class="fw-bold">{{project.projectStartDate}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="text-end">
+                    <div class="d-flex align-items-center mx-auto" style="width:150px!important;">
+                        <div>                
+                            {% if forloop.counter == 3 %}
+                            <a class="btn btn-danger btn-sm btn-rounded" href="{% url 'project' project.client.id %}">
+                                Update Project
+                            </a>
+                            {% else %}
+                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="{% url 'project' project.client.id %}">
+                                Update Project
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% endblock content %}

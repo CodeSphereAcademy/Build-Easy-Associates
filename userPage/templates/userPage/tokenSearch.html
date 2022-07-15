@@ -1,0 +1,36 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<h1 class="position-absolute d-md-block w-100 text-center fw-bold d-none" style="top:41%;">Track Client's <span style="color:rgb(255, 0, 0);">Project Status</span></h1>
+<h2 class="position-absolute d-block w-100 text-center fw-bold d-md-none" style="top:44%;">Track Client's <span style="color:rgb(255, 0, 0);">Project Status</span></h2>
+<div class="d-flex justify-content-center align-items-center" style="height:90vh;">
+    <div class="shadow shadow-6-strong border border-1 border-dark rounded">
+        <form action="{% url 'project' 0 %}" method="post">
+            {% csrf_token %}
+            <div class="text-dark bg-light p-3 rounded d-none d-md-block">
+                <div class="input-group ">
+                    <div class="form-outline">
+                        <input type="search" id="form1" class="form-control fs-6 d-inline bg-light" name="tokenID"/>
+                        <label class="form-label fs-6 fw-bold text-dark" for="form1">Enter Token ID...</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark fs-6">
+                        Search
+                        </button>
+                </div>
+            </div>
+        </form>    
+        <form action="{% url 'project' 0 %}" method="post">
+            {% csrf_token %}
+            <div class="text-dark bg-light p-3 rounded d-block d-md-none">
+                <div class="input-group">
+                    <div class="form-outline">
+                        <input type="search" id="form1" class="form-control fs-6 d-inline bg-light" size="15" name="tokenID"/>
+                        <label class="form-label fs-6 fw-bold text-dark" for="form1">Enter Token ID...</label>
+                    </div>
+                    <button type="submit" class="btn btn-dark fs-6">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </form>   
+    </div>
+</div> 
+{% endblock content %}

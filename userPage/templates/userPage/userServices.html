@@ -1,0 +1,52 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<header>
+    <div class="text-center" style="height: 100vh;">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.9)">
+            <div>
+                <img src=""
+                    style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/7.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: 100vw 100vh;filter: blur(4px) grayscale(100%);"
+                    class="d-md-block d-none mx-auto" />
+                <img src=""
+                    style="opacity:0.5;height:100vh;background-image: url('{% static 'userPage/img/HomeImg/7.jpg' %}');background-repeat: no-repeat; background-position: center;background-size: cover;filter: blur(4px) grayscale(100%);"
+                    class="d-block d-md-none mx-auto" />
+                <div class="carousel-caption d-flex justify-content-center align-items-center"
+                    style="height:100vh; left:0%; right:0%;">
+                    <div class="mt-5 py-3 bg-dark opacity-70">
+                        <h1 class="mb-2 fw-bold" style="font-family: 'Raleway', sans-serif;">SER<span style="color:rgb(230, 0, 0);">VICES</span></h1>
+                        <hr>
+                        <p class="mb-4 fw-normal px-3"
+                            style="font-family: 'Raleway', sans-serif;text-align: justify; max-width: 450px; font-size: small;">
+                            We collaborate with our clients on design concepts and plans. We work with associates and
+                            partners to plan, consult, and develop architectural and interior design solutions that help
+                            to simplify complex relationships between geometry, landscape, and master planning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<h1 class="text-center mt-0 mb-4 display-6">Services We Offer !!!</h1>
+<div class="container">
+    <div class="row">
+        
+        {% for service in services %}
+        
+            <div class="col-12 col-md-3 mb-3">
+                <div class="card h-100 border border-2 border-danger">
+                    <img src="{{service.pic.url}}" class="card-img-top bg-opacity-50" style="background-color:rgb(136, 136, 136, 0.5);" alt="Skyscrapers" />
+                    <hr class="my-0">
+                    <div class="card-body px-2 py-3">
+                        <h5 class="card-title fw-bold">{{service.name}}</h5>
+                        <p class="card-text">{{service.details}}</p>
+                    </div>
+                    <div class="card-footer p-2 bg-dark bg-opacity-7 text-light">
+                        <small class="fw-normal"><b>Price:</b> ( {{service.cost}}% ) of Project Cost</small>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+            
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,70 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<div class="container" style="max-width:1000px;">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>
+            <h1 class="text-start py-3" id="below">New Member's Deatils</h1>
+        </div>
+    </div>
+    <form action="{% url 'updateTeams' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="custom-file mb-4">
+            <label class="form-label">Upload Profile Image</label>
+            <input type="file" name="profileImg" class="form-control" id="profileImg" accept="image/*" required/>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" name="memberName" id="memberName" class="form-control" required/>
+            <label class="form-label" for="memberName">Enter Name</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" name="memberMob" id="memberMob" class="form-control" required/>
+            <label class="form-label" for="memberMob">Enter Mobile No.</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" name="memberRole" id="memberRole" class="form-control" required/>
+            <label class="form-label" for="memberRole">Enter Job Role</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" name="memberRoleDesc" id="memberRoleDesc" class="form-control" required/>
+            <label class="form-label" for="memberRoleDesc">Enter Job Description</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="text" name="memberSalary" id="memberSalary" class="form-control" required/>
+            <label class="form-label" for="memberSalary">Enter Salary</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block mb-4">Add Member</button>
+    </form>
+    <hr class="my-3">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>
+            <h1 class="text-start py-3" id="below">Our Team</h1>
+        </div>
+    </div>
+    <div class="row mx-auto mx-0 my-3 px-0">
+        {% for staff in team %}
+        <div class="col-12 col-md-4 mb-3 px-0 px-md-1">
+          <div class="card shadow">
+            <img src="{{staff.pic.url}}" class="d-block w-100 card-img-top" alt="first" /> 
+            <div class="card-body px-3 pb-0">
+                <h5 class="card-title fw-bold">{{staff.name}}</h5>
+                <p class="card-text">{{staff.jobDesc}}</p>
+            </div>
+            <hr class="mb-0">
+            <ul class="mt-1 list-group list-group-light list-group-small">
+                <li class="list-group-item px-3"><b>Job:</b> {{staff.jobRole}}</li>
+                <li class="list-group-item px-3"><b>Phone:</b> {{staff.phone}}</li>
+                <li class="list-group-item px-3"><b>Salary:</b> {{staff.salary}} Rs.</li>
+                <li class="list-group-item px-3"><b>Join Date:</b> {{staff.joiningDate}}</li>
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
