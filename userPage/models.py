@@ -16,7 +16,7 @@ class ClientServiceInfo(models.Model):
 
 class ClientInfo(models.Model):
     name = models.CharField(max_length=20)
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=15)
     email = models.CharField(max_length=50,null=True)
     address = models.CharField(max_length=200)
     plotSize = models.IntegerField()
@@ -78,7 +78,7 @@ class Project(models.Model):
 class Team(models.Model):
     pic = models.ImageField()
     name = models.CharField(max_length=20,null=False)
-    phone = models.CharField(max_length=10,null=True)
+    phone = models.CharField(max_length=15,null=True)
     jobRole = models.CharField(max_length=30,null=True)
     jobDesc = models.CharField(max_length=200,null=False)
     salary = models.IntegerField()
@@ -89,8 +89,8 @@ class Team(models.Model):
 class RecEmail(models.Model):
     name = models.CharField(max_length=30)
     email = models.CharField(max_length=50)
-    phone = models.CharField(max_length=10)
-    msg = models.TextField()
+    phone = models.CharField(max_length=15)
+    msg = models.CharField(max_length=2000)
     date = models.DateField(default=date.today,null=True)
     def __str__(self):
         return self.name  
@@ -100,7 +100,7 @@ class RecEmail(models.Model):
 class SendEmail(models.Model):
     client = models.ForeignKey(ClientInfo,on_delete=models.CASCADE)
     title = models.CharField(max_length=40)
-    msg = models.TextField()
+    msg = models.CharField(max_length=2000)
     date = models.DateField(default=date.today,null=True)
     def __str__(self):
         return self.client.name
