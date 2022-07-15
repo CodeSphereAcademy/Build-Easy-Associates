@@ -100,7 +100,7 @@ class RecEmail(models.Model):
 class SendEmail(models.Model):
     client = models.ForeignKey(ClientInfo,on_delete=models.CASCADE)
     title = models.CharField(max_length=40)
-    msg = models.TimeField()
+    msg = models.TextField()
     date = models.DateField(default=date.today,null=True)
     def __str__(self):
         return self.client.name
