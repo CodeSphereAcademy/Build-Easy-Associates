@@ -8,7 +8,7 @@ class ClientServiceInfo(models.Model):
     pic = models.ImageField(null=True)
     name = models.CharField(max_length=30)
     cost = models.FloatField()
-    details = models.CharField(max_length=50)
+    details = models.CharField(max_length=200)
     def __str__(self):
         return self.name
     class Meta:
@@ -18,12 +18,12 @@ class ClientInfo(models.Model):
     name = models.CharField(max_length=20)
     phone = models.CharField(max_length=10)
     email = models.CharField(max_length=50,null=True)
-    address = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
     plotSize = models.IntegerField()
     builtArea = models.IntegerField()
     numFloor = models.IntegerField()
-    plotAddress = models.CharField(max_length=100)
-    projectDescription = models.CharField(max_length=200,null=True)
+    plotAddress = models.CharField(max_length=200)
+    projectDescription = models.CharField(max_length=500,null=True)
     serviceOpted = models.ManyToManyField(ClientServiceInfo)
     interiorArea = models.IntegerField(default=0,null=True)
     basementArea = models.IntegerField(default=0,null=True)
@@ -33,7 +33,7 @@ class ClientInfo(models.Model):
     projectTitle = models.CharField(max_length=50,default="",null=True)
     tokenAmount = models.IntegerField(default=0,null=True)
     pendingAmount = models.IntegerField(default=0,null=True)
-    clientRequirements = models.CharField(max_length=200,default="",null=True)
+    clientRequirements = models.CharField(max_length=500,default="",null=True)
     projectStartDate = models.DateField(default=date.today,null=True)
     projectEndDate = models.DateField(default=date.today,null=True)
     projectStatus = models.CharField(max_length=50,default="Pending",null=True)
@@ -59,7 +59,7 @@ class Post(models.Model):
     pic9 = models.ImageField(null=True,blank=True)
     pic10 = models.ImageField(null=True,blank=True)
     name = models.CharField(max_length=20,null=True)
-    detail = models.CharField(max_length=50)
+    detail = models.CharField(max_length=200)
     publishDate = models.DateField(default=date.today,null=True)
     def __str__(self):
         return self.detail  
@@ -68,9 +68,9 @@ class Project(models.Model):
     pic1 = models.ImageField()
     pic2 = models.ImageField()
     projectTitle = models.CharField(max_length=20,null=False)
-    projectCost = models.FloatField(null=True)
-    projectArea = models.FloatField(null=True)
-    projectDesc = models.CharField(max_length=200,null=False)
+    projectCost = models.IntegerField(null=True)
+    projectArea = models.IntegerField(null=True)
+    projectDesc = models.CharField(max_length=500,null=False)
     publishDate = models.DateField(default=date.today,null=True)
     def __str__(self):
         return self.projectTitle
