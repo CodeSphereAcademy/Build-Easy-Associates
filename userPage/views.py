@@ -74,12 +74,12 @@ def userHome(request):
 
         if emailSend == "yes":
             send_mail(str(name)+" - New Quotation",str(msg),"buildeasy01@gmail.com",[str(email),"buildeasy01@gmail.com"])
-            email = SendEmail.objects.create(client=client,title="New Quotation",msg=str(request.POST))
+            email = SendEmail.objects.create(client=client,title="New Quotation",msg=str(msg))
             email.save()
 
         if emailSend == "No":
             send_mail(str(name)+" - New Quotation",str(msg),"buildeasy01@gmail.com",["buildeasy01@gmail.com"])
-            email = SendEmail.objects.create(client=client,title="New Quotation",msg=str(request.POST))
+            email = SendEmail.objects.create(client=client,title="New Quotation",msg=str(msg))
             email.save()    
 
         return redirect(quoteResponse,permanent=True)
