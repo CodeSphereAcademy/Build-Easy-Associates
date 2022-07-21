@@ -1,6 +1,5 @@
 from datetime import date
 import email
-from tkinter import FALSE
 from django.db import models
 from psycopg2 import Date
 
@@ -105,7 +104,7 @@ class SendEmail(models.Model):
     title = models.CharField(max_length=40)
     msg = models.CharField(max_length=2000)
     date = models.DateField(default=date.today,null=True)
-    read = models.BooleanField(default=FALSE)
+    read = models.BooleanField(default=False)
     def __str__(self):
         return self.client.name
     class Meta:
