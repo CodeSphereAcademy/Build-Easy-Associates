@@ -42,7 +42,7 @@
                                     all kind of Civil, Architectural and Interior Designing Works.</h6>
                                 <div class="mx-auto d-none d-md-block">
                                     <a class="btn btn-outline-light rounded rounded-pill m-2"
-                                        data-mdb-ripple-color="light" href="#myFormHeading fs-6 fw-bold">Learn More <i
+                                        data-mdb-ripple-color="light" href="#myFormHeading">Learn More <i
                                             class="fas fa-long-arrow-alt-right ms-1"></i></a>
                                     <a class="btn btn-light rounded rounded-pill m-2" data-mdb-ripple-color="light"
                                         href="#myFormHeading">
@@ -84,7 +84,7 @@
                                     all kind of Civil, Architectural and Interior Designing Works.</h6>
                                 <div class="mx-auto d-none d-md-block">
                                     <a class="btn btn-outline-light rounded rounded-pill m-2"
-                                        data-mdb-ripple-color="light" href="#myFormHeading fs-6 fw-bold">Learn More <i
+                                        data-mdb-ripple-color="light" href="#myFormHeading">Learn More <i
                                             class="fas fa-long-arrow-alt-right ms-1"></i></a>
                                     <a class="btn btn-light rounded rounded-pill m-2" data-mdb-ripple-color="light"
                                         href="#myFormHeading">
@@ -126,7 +126,7 @@
                                     all kind of Civil, Architectural and Interior Designing Works.</h6>
                                 <div class="mx-auto d-none d-md-block">
                                     <a class="btn btn-outline-light rounded rounded-pill m-2"
-                                        data-mdb-ripple-color="light" href="#myFormHeading fs-6 fw-bold">Learn More <i
+                                        data-mdb-ripple-color="light" href="#myFormHeading">Learn More <i
                                             class="fas fa-long-arrow-alt-right ms-1"></i></a>
                                     <a class="btn btn-light rounded rounded-pill m-2" data-mdb-ripple-color="light"
                                         href="#myFormHeading">
@@ -241,12 +241,12 @@
     <div class="row">
         <div class="col-12 col-md-4 d-flex justify-content-center align-items-center bg-dark px-3 py-0 text-light">
             <div class="d-none d-md-block">
-                <h1 class="display-4 fw-bolder text-center p-0 m-0">10+</h1>
+                <h1 class="display-4 fw-bolder text-center p-0 m-0">{{var.YOE}}+</h1>
                 <h1 class="display-4 fw-normal text-center">Years</h1>
                 <h1 class="display-5 fw-light text-center">EXPERIENCE</h1>
             </div>
             <div class="d-md-none d-block py-3">
-                <h2 class="fw-bolder text-center lh-base p-0 m-0">10+ Years</h2>
+                <h2 class="fw-bolder text-center lh-base p-0 m-0">{{var.YOE}}+ Years</h2>
                 <h3 class="fw-light text-center">EXPERIENCE</h3>
             </div>
         </div>
@@ -313,7 +313,7 @@
                         <div class="carousel-item active">
                             <img src="{% static 'userPage/img/h1.jpg' %}" class="d-block w-100" alt="Motorbike Smoke" />
                             <div class="carousel-caption mx-auto bg-dark h-25"
-                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                                style="max-width:400px; opacity: 0.8; filter: blur(1px);"></div>
                             <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
                                 style="max-width:400px;position: absolute;">
                                 <div class="text-start d-flex justify-content-center align-items-center position-absolute"
@@ -333,7 +333,7 @@
                         <div class="carousel-item">
                             <img src="{% static 'userPage/img/h2.jpg' %}" class="d-block w-100" alt="Mountaintop" />
                             <div class="carousel-caption mx-auto bg-dark h-25"
-                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                                style="max-width:400px; opacity: 0.8; filter: blur(1px);"></div>
                             <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
                                 style="max-width:400px;position: absolute;">
                                 <div class="text-start d-flex justify-content-center align-items-center position-absolute"
@@ -354,7 +354,7 @@
                             <img src="{% static 'userPage/img/h3.jpg' %}" class="d-block w-100"
                                 alt="Woman Reading a Book" />
                             <div class="carousel-caption mx-auto bg-dark h-25"
-                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                                style="max-width:400px; opacity: 0.8; filter: blur(1px);"></div>
                             <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
                                 style="max-width:400px;position: absolute;">
                                 <div class="text-start d-flex justify-content-center align-items-center position-absolute"
@@ -375,7 +375,7 @@
                             <img src="{% static 'userPage/img/h4.jpg' %}" class="d-block w-100"
                                 alt="Woman Reading a Book" />
                             <div class="carousel-caption mx-auto bg-dark h-25"
-                                style="max-width:400px; opacity: 0.8; filter: blur(4px);"></div>
+                                style="max-width:400px; opacity: 0.8; filter: blur(1px);"></div>
                             <div class="carousel-caption mx-auto d-flex justify-content-center align-items-center h-25"
                                 style="max-width:400px;position: absolute;">
                                 <div class="text-start d-flex justify-content-center align-items-center position-absolute"
@@ -417,32 +417,32 @@
     <div class="row mx-auto py-5 d-flex justify-content-center align-items-center">
         <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
                 class="fas fa-2x p-2 m-2 fa-city rounded-circle bg-dark "></i>
-            <h1>100+</h1>
+            <h1>{{var.totalProjects}}+</h1>
             <h5 class="fw-lighter ls-wider">Projects</h5>
         </div>
         <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
                 class="fas fa-2x p-2 m-2 fa-user-alt rounded-circle bg-dark text-light"></i>
-            <h1>200+</h1>
+            <h1>{{var.totalEmployees}}+</h1>
             <h5 class="fw-lighter ls-wider">Employees</h5>
         </div>
         <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
                 class="fas fa-2x p-2 m-2 fa-hard-hat rounded-circle bg-dark text-light"></i>
-            <h1>150+</h1>
+            <h1>{{var.totalClients}}+</h1>
             <h5 class="fw-lighter ls-wider">Clients</h5>
         </div>
         <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
                 class="fas fa-2x p-2 m-2 fa-handshake rounded-circle bg-dark text-light"></i>
-            <h1>50+</h1>
+            <h1>{{var.totalPartners}}+</h1>
             <h5 class="fw-lighter ls-wider">Partners</h5>
         </div>
         <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
                 class="fas fa-2x p-2 m-2 fa-location rounded-circle bg-dark text-light"></i>
-            <h1>20+</h1>
+            <h1>{{var.totalCities}}+</h1>
             <h5 class="fw-lighter ls-wider">Cities</h5>
         </div>
         <div class="col-md-3 col-6 p-3 m-2 text-center text-light bg-dark opacity-90"><i
                 class="fas fa-2x p-2 m-2 fa-timeline rounded-circle bg-dark text-light"></i>
-            <h1>10+</h1>
+            <h1>{{var.YOE}}+</h1>
             <h5 class="fw-lighter ls-wider">Years</h5>
         </div>
     </div>
@@ -452,25 +452,24 @@
 
 <div class="container">
     <div class="row d-flex justify-content-around align-items-center px-0">
-        <div class="col-12 col-md-7 mt-4 mb-md-0">
+        <div class="col-12 col-md-6 mt-4 mb-md-0">
             <div class="row pe-md-2 px-0 pt-2 d-flex justify-content-start align-items-center">
                 <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0">
-                    <div class="card">
-                        <img src="{% static 'userPage/img/man.png' %}" height="150" width="150"
-                            class="mx-auto rounded rounded-circle" style="opacity:0.8;" />
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold text-center">Name One</h5>
-                            <h6 class="card-title fw-normal text-center">Lead Engineer</h6>
-                            <hr>
-                            <p class="card-text fw-bold" style="font-size: small;">Some quick example text to build on
-                                the card title.</p>
+                    <div class="card border border-2">
+                        <img src="{% static 'userPage/img/bhaiya.jpg' %}"
+                            class="mx-auto w-100" style="opacity:0.9;" />
+                        <div class="card-body py-2">
+                            <h6 class="card-title fw-bold text-center mb-1">Er. Shailesh Kanwar</h6>
+                            <h6 class="card-title fw-normal text-center mb-1">Lead Engineer</h6>
+                            <hr class="my-2">
+                            <p class="card-text fw-bold" style="font-size: small;">Some quick example text to build.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-7 mb-4 mb-md-0">
                     <div class="d-none d-md-block">
                         <h5 class="fw-light" style="letter-spacing:20px;">TEAM</h5>
-                        <h1 class="display-5 fw-light">THE <span class="fw-bold">FOUNDER</span></h1>
+                        <h1 class="display-5 fw-light"><span class="fw-bold">FOUNDER</span></h1>
                         <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">We are an interdisciplinary
                             design firm focused on
                             producing results and a type of integrative design known for simplifying complex nature,
@@ -481,8 +480,8 @@
                     </div>
                     <div class="d-block d-md-none">
                         <h6 class="fw-light" style="letter-spacing:10px;">TEAM</h6>
-                        <h4 class="fw-light">THE <span class="fw-bold">FOUNDER</span></h4>
-                        <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">We are an interdisciplinary
+                        <h4 class="fw-light"><span class="fw-bold">FOUNDER</span></h4>
+                        <p class="fw-light" style="text-align: justify;">We are an interdisciplinary
                             design firm focused on
                             producing results and a type of integrative design known for simplifying complex nature,
                             maximizing
@@ -494,43 +493,14 @@
             </div>
         </div>
         <hr class="d-md-none d-block">
-        <div class="col-12 col-md-5 mt-2 mt-md-0">
+        <div class="col-12 col-md-6 mt-2 mt-md-0">
             <div class="row px-0 pt-2 d-flex justify-content-center align-items-center">
-                <!-- Carousel wrapper -->
-                <div id="carouselDarkVariant" class="carousel slide carousel-light" data-mdb-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-mdb-target="carouselDarkVariant" data-mdb-slide-to="1"
-                            aria-label="Slide 2"></button>
-                    </div>
-                    <!-- Inner -->
-                    <div class="carousel-inner">
-                        <!-- Single item -->
-                        <div class="carousel-item active" data-mdb-interval="15000">
-                            <iframe class="w-100" height="330"
-                                src="https://www.youtube.com/embed/gwjQcmpU8UQ?controls=0&autoplay=1&mute=1&loop=1"></iframe>
-                        </div>
-                        <!-- Single item -->
-                        <div class="carousel-item" data-mdb-interval="15000">
-                            <iframe class="w-100" height="330"
-                                src="https://www.youtube.com/embed/1XDZ_HxD8Gk?controls=0&autoplay=1&mute=1&loop=1"></iframe>
-                        </div>
-                    </div>
-                    <!-- Inner -->
-                    <!-- Controls -->
-                    <button class="carousel-control-prev d-none" type="button" data-mdb-target="#carouselDarkVariant"
-                        data-mdb-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next d-none" type="button" data-mdb-target="#carouselDarkVariant"
-                        data-mdb-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <!-- Carousel wrapper -->
+                <iframe width="560" height="310"
+                    src="https://www.youtube-nocookie.com/embed/{{var.yt1}}?controls=0&autoplay=1&mute=1&loop=1&rel=0"
+                    title="Build-Easy-Associates" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <!-- <iframe class="w-100" height="360" width="640" src="https://www.youtube.com/embed/1XDZ_HxD8Gk?controls=1&autoplay=1&mute=1&loop=1&rel=0"></iframe> -->
             </div>
         </div>
     </div>
@@ -544,33 +514,44 @@
             <div class="row px-0 px-me-2 pt-2">
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-end justify-content-md-start">
-                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Planning.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Planning.png' %}"
+                                height="50" width="50" alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Planning</h6>
-                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Planning</h6>
-                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Planning.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">
+                            Planning</h6>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img
+                                src="{% static 'userPage/img/Planning.png' %}" height="50" width="50" alt=""></h5>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-md-start">
-                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Elevation.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Elevation.png' %}" height="50"
+                                width="50" alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Elevation</h6>
-                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Elevation</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Elevation
+                        </h6>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-end justify-content-md-start">
-                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Structure Designing.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal d-none d-md-block"><img
+                                src="{% static 'userPage/img/Structure Designing.png' %}" height="50" width="50" alt="">
+                        </h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Structure</h6>
-                        <p class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Structure</p>
-                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Structure Designing.png' %}" height="50" width="50" alt=""></h5>
+                        <p class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">
+                            Structure</p>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img
+                                src="{% static 'userPage/img/Structure Designing.png' %}" height="50" width="50" alt="">
+                        </h5>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-md-start">
-                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Layout.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Layout.png' %}" height="50" width="50"
+                                alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Layout</h6>
                         <p class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Layout</p>
                     </div>
@@ -578,44 +559,56 @@
 
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-end justify-content-md-start">
-                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Construction.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Construction.png' %}"
+                                height="50" width="50" alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Construction</h6>
-                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Construction</h6>
-                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Construction.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">
+                            Construction</h6>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img
+                                src="{% static 'userPage/img/Construction.png' %}" height="50" width="50" alt=""></h5>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-md-start">
-                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Supervision.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Supervision.png' %}" height="50"
+                                width="50" alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Supervision</h6>
-                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Supervision</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Supervision
+                        </h6>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-end justify-content-md-start">
-                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Valuation.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal d-none d-md-block"><img src="{% static 'userPage/img/Valuation.png' %}"
+                                height="50" width="50" alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Valuation</h6>
-                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">Valuation</h6>
-                        <h5 class="fw-normal d-block d-md-none text-end"><img src="{% static 'userPage/img/Valuation.png' %}" height="50" width="50" alt=""></h5>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none text-end" style="font-size: small;">
+                            Valuation</h6>
+                        <h5 class="fw-normal d-block d-md-none text-end"><img
+                                src="{% static 'userPage/img/Valuation.png' %}" height="50" width="50" alt=""></h5>
                     </div>
                 </div>
 
-                
+
                 <div class="col-6 col-md-4 mb-1">
                     <div class="d-flex align-items-center justify-content-md-start">
-                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Interior Designing.png' %}" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Interior Designing.png' %}" height="50"
+                                width="50" alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Interior</h6>
-                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Interior</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Interior
+                        </h6>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-4 mb-1 d-none d-md-block justify-content-md-start">
                     <div class="d-flex align-items-center">
-                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Landscaping.png' %}" class="opacity-70" height="50" width="50" alt=""></h5>
+                        <h5 class="fw-normal"><img src="{% static 'userPage/img/Landscaping.png' %}" class="opacity-70"
+                                height="50" width="50" alt=""></h5>
                         <h6 class="fw-bold ms-2 text-uppercase d-none d-md-block">Landscaping</h6>
-                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Landscaping</h6>
+                        <h6 class="fw-bold ms-2 text-uppercase d-block d-md-none" style="font-size: small;">Landscaping
+                        </h6>
                     </div>
                 </div>
 
@@ -647,114 +640,175 @@
 <hr class="my-md-5 my-4" id="homeTestimonial" />
 
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-md-4 d-flex justify-content-start align-items-center mb-3">
-            <div class="d-none d-md-block">
-                <h5 class="fw-light" style="letter-spacing:10px;">TESTIMONIAL</h5>
-                <h1 class="display-5 fw-light">WHAT OUR <br><span class="fw-bold">CLIENTS SAYS</span></h1>
-                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">Even the all-powerful Pointing has no
-                    control
-                    about the blind texts it is an almost unorthographic
-                    life One day however a small line of blind text by the name</p>
-            </div>
-            <div class="d-block d-md-none">
-                <h6 class="fw-light" style="letter-spacing:10px;">TESTIMONIAL</h6>
-                <h4 class="fw-light">WHAT OUR <span class="fw-bold">CLIENTS SAYS</span></h4>
-                <p class="fw-light fs-6 ls-tighter" style="text-align: justify;">Even the all-powerful Pointing has no
-                    control
-                    about the blind texts it is an almost unorthographic
-                    life One day however a small line of blind text by the name</p>
+    <div class="row d-flex justify-content-around align-items-center px-0">
+        <div class="col-12 col-md-6 mt-4 mb-md-0 d-flex justify-content-start align-items-center">
+            <div class="col-12 mb-4 mb-md-0">
+                <div class="d-none d-md-block">
+                    <h5 class="fw-light" style="letter-spacing:10px;">TESTIMONIAL</h5>
+                    <h1 class="fw-light display-5">OUR <span class="fw-bold">CLIENTS SAYS</span></h1>
+                    <!-- Carousel wrapper -->
+                    <div id="carouselBasicExamplex" class="carousel slide carousel-fade col-12" data-mdb-ride="carousel">
+                        <!-- Indicators -->
+                        <!-- Inner -->
+                        <div class="carousel-inner">
+                        <!-- Single item -->
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <span class="position-absolute" style="top:5px;right:10px;"><i
+                                            class="fas fa fa-quote-right"></i></span>
+                                    <span class="position-absolute" style="top:5px;left:10px;"><i
+                                            class="fas fa fa-quote-left"></i></span>
+                                    <div class="card-body border border-2">
+                                        <p class="card-text fw-bold py-0 my-0" style="font-size: small; text-align: justify;">Lorem
+                                            ipsum dolor sit amet consectetur, adipisicing elit. Veniam autem, reiciendis ipsam
+                                            officia hic cumque atque ad dolorum dignissimos eos soluta alias mollitia laboriosam
+                                            laudantium aut, natus illo facilis sit. officia hic cumque atque ad dolorum dignissimos 
+                                            eos soluta alias mollitia laboriosam laudantium aut, natus illo facilis sit.</p>
+                                        <hr class="my-2">
+                                        <div class="row mx-0 px-0">
+                                            <p class="fw-bold py-0 my-0 px-0 col-4 text-start" style="font-size: small;">15/07/2022</p>
+                                            <p class="fw-bold py-0 my-0 px-0 col-8 text-end" style="font-size: small;">Abhishek Kumar Singh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Single item -->
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <span class="position-absolute" style="top:5px;right:10px;"><i
+                                            class="fas fa fa-quote-right"></i></span>
+                                    <span class="position-absolute" style="top:5px;left:10px;"><i
+                                            class="fas fa fa-quote-left"></i></span>
+                                    <div class="card-body border border-2">
+                                        <p class="card-text fw-bold py-0 my-0" style="font-size: small; text-align: justify;">Lorem
+                                            ipsum dolor sit amet consectetur, adipisicing elit. Veniam autem, reiciendis ipsam
+                                            officia hic cumque atque ad dolorum dignissimos eos soluta alias mollitia laboriosam
+                                            laudantium aut, natus illo facilis sit. officia hic cumque atque ad dolorum dignissimos 
+                                            eos soluta alias mollitia laboriosam laudantium aut, natus illo facilis sit.</p>
+                                        <hr class="my-2">
+                                        <div class="row mx-0 px-0">
+                                            <p class="fw-bold py-0 my-0 px-0 col-4 text-start" style="font-size: small;">18/07/2022</p>
+                                            <p class="fw-bold py-0 my-0 px-0 col-8 text-end" style="font-size: small;">Arvind Kumar Singh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Single item -->
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <span class="position-absolute" style="top:5px;right:10px;"><i
+                                            class="fas fa fa-quote-right"></i></span>
+                                    <span class="position-absolute" style="top:5px;left:10px;"><i
+                                            class="fas fa fa-quote-left"></i></span>
+                                    <div class="card-body border border-2">
+                                        <p class="card-text fw-bold py-0 my-0" style="font-size: small; text-align: justify;">Lorem
+                                            ipsum dolor sit amet consectetur, adipisicing elit. Veniam autem, reiciendis ipsam
+                                            officia hic cumque atque ad dolorum dignissimos eos soluta alias mollitia laboriosam
+                                            laudantium aut, natus illo facilis sit. officia hic cumque atque ad dolorum dignissimos 
+                                            eos soluta alias mollitia laboriosam laudantium aut, natus illo facilis sit.</p>
+                                        <hr class="my-2">
+                                        <div class="row mx-0 px-0">
+                                            <p class="fw-bold py-0 my-0 px-0 col-4 text-start" style="font-size: small;">14/07/2022</p>
+                                            <p class="fw-bold py-0 my-0 px-0 col-8 text-end" style="font-size: small;">Annapurna Kumari</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Inner -->
+                    </div>
+                    <!-- Carousel wrapper -->
+                </div>
+                <div class="d-block d-md-none">
+                    <h6 class="fw-light" style="letter-spacing:10px;">TESTIMONIAL</h6>
+                    <h4 class="fw-light">WHAT OUR <span class="fw-bold">CLIENTS SAYS</span></h4>
+                    <!-- Carousel wrapper -->
+                    <div id="carouselBasicExamplex" class="carousel slide carousel-fade col-12" data-mdb-ride="carousel">
+                        <!-- Indicators -->
+                        <!-- Inner -->
+                        <div class="carousel-inner">
+                        <!-- Single item -->
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <span class="position-absolute" style="top:5px;right:10px;"><i
+                                            class="fas fa fa-quote-right"></i></span>
+                                    <span class="position-absolute" style="top:5px;left:10px;"><i
+                                            class="fas fa fa-quote-left"></i></span>
+                                    <div class="card-body border border-2">
+                                        <p class="card-text fw-bold py-0 my-0" style="font-size: small; text-align: justify;">Lorem
+                                            ipsum dolor sit amet consectetur, adipisicing elit. Veniam autem, reiciendis ipsam
+                                            officia hic cumque atque ad dolorum dignissimos eos soluta alias mollitia laboriosam
+                                            laudantium aut, natus illo facilis sit. officia hic cumque atque ad dolorum dignissimos 
+                                            eos soluta alias mollitia laboriosam laudantium aut, natus illo facilis sit.</p>
+                                        <hr class="my-2">
+                                        <div class="row mx-0 px-0">
+                                            <p class="fw-bold py-0 my-0 px-0 col-4 text-start" style="font-size: small;">15/07/2022</p>
+                                            <p class="fw-bold py-0 my-0 px-0 col-8 text-end" style="font-size: small;">Abhishek Kumar Singh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Single item -->
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <span class="position-absolute" style="top:5px;right:10px;"><i
+                                            class="fas fa fa-quote-right"></i></span>
+                                    <span class="position-absolute" style="top:5px;left:10px;"><i
+                                            class="fas fa fa-quote-left"></i></span>
+                                    <div class="card-body border border-2">
+                                        <p class="card-text fw-bold py-0 my-0" style="font-size: small; text-align: justify;">Lorem
+                                            ipsum dolor sit amet consectetur, adipisicing elit. Veniam autem, reiciendis ipsam
+                                            officia hic cumque atque ad dolorum dignissimos eos soluta alias mollitia laboriosam
+                                            laudantium aut, natus illo facilis sit. officia hic cumque atque ad dolorum dignissimos 
+                                            eos soluta alias mollitia laboriosam laudantium aut, natus illo facilis sit.</p>
+                                        <hr class="my-2">
+                                        <div class="row mx-0 px-0">
+                                            <p class="fw-bold py-0 my-0 px-0 col-4 text-start" style="font-size: small;">18/07/2022</p>
+                                            <p class="fw-bold py-0 my-0 px-0 col-8 text-end" style="font-size: small;">Arvind Kumar Singh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Single item -->
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <span class="position-absolute" style="top:5px;right:10px;"><i
+                                            class="fas fa fa-quote-right"></i></span>
+                                    <span class="position-absolute" style="top:5px;left:10px;"><i
+                                            class="fas fa fa-quote-left"></i></span>
+                                    <div class="card-body border border-2">
+                                        <p class="card-text fw-bold py-0 my-0" style="font-size: small; text-align: justify;">Lorem
+                                            ipsum dolor sit amet consectetur, adipisicing elit. Veniam autem, reiciendis ipsam
+                                            officia hic cumque atque ad dolorum dignissimos eos soluta alias mollitia laboriosam
+                                            laudantium aut, natus illo facilis sit. officia hic cumque atque ad dolorum dignissimos 
+                                            eos soluta alias mollitia laboriosam laudantium aut, natus illo facilis sit.</p>
+                                        <hr class="my-2">
+                                        <div class="row mx-0 px-0">
+                                            <p class="fw-bold py-0 my-0 px-0 col-4 text-start" style="font-size: small;">14/07/2022</p>
+                                            <p class="fw-bold py-0 my-0 px-0 col-8 text-end" style="font-size: small;">Annapurna Kumari</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Inner -->
+                    </div>
+                    <!-- Carousel wrapper -->
+                </div>
             </div>
         </div>
-        <div class="col-12 col-md-8 d-flex justify-content-center align-items-center">
-            <div>
-                <!-- Carousel wrapper -->
-                <div id="carouselExampleControls" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="card mb-3 p-md-2 p-0" style="max-width: 100vw;">
-                                <span class="position-absolute top-0 left-0"><i class="fas fa-2x fa-quote-left"></i></span>
-                                <div class="row g-0 p-md-4 p-0">
-                                    <div class="col-md-4">
-                                        <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png"
-                                            alt="Trendy Pants and Shoes" class="img-fluid rounded-3 h-100" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Client Name 1</h5>
-                                            <p class="card-text">
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content. This content is a little bit longer.
-                                            </p>
-                                            <p class="card-text">
-                                                <small class="text-muted">Date - 08/06/2022</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card mb-3 p-md-2 p-0" style="max-width: 100vw;">
-                                <span class="position-absolute top-0 left-0"><i
-                                        class="fas fa-2x fa-quote-left"></i></span>
-                                <div class="row g-0 p-md-4 p-0">
-                                    <div class="col-md-4">
-                                        <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png"
-                                            alt="Trendy Pants and Shoes" class="img-fluid rounded-3 h-100" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Client Name 2</h5>
-                                            <p class="card-text">
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content. This content is a little bit longer.
-                                            </p>
-                                            <p class="card-text">
-                                                <small class="text-muted">Date - 08/06/2022</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card mb-3 p-md-2 p-0" style="max-width: 100vw;">
-                                <span class="position-absolute top-0 left-0"><i
-                                        class="fas fa-2x fa-quote-left"></i></span>
-                                <div class="row g-0 p-md-4 p-0">
-                                    <div class="col-md-4">
-                                        <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png"
-                                            alt="Trendy Pants and Shoes" class="img-fluid rounded-3 h-100" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Client Name 3</h5>
-                                            <p class="card-text">
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content. This content is a little bit longer.
-                                            </p>
-                                            <p class="card-text">
-                                                <small class="text-muted">Date - 08/06/2022</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev d-none" type="button"
-                        data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next d-none" type="button"
-                        data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <!-- Carousel wrapper -->
+        <hr class="d-md-none d-block">
+        <div class="col-12 col-md-6 mt-2 mt-md-0">
+            <div class="row px-0 pt-2 d-flex justify-content-center align-items-center">
+                <iframe width="560" height="310"
+                    src="https://www.youtube-nocookie.com/embed/{{var.yt2}}?controls=0&autoplay=1&mute=1&loop=1&rel=0"
+                    title="Build-Easy-Associates" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -762,7 +816,7 @@
 
 <hr class="my-md-5 my-4" id="myFormHeading" />
 
-<h1 class="text-center fw-light display-5">Enter Details Here..</h1>
+<h1 class="text-center fw-light display-5" id="xyz">Enter Details Here..</h1>
 
 <form class="container my-md-5 my-4 col-md-9 col-12 px-md-0" method="POST" action="{% url 'userHome' %}" id="myForm">
     {% csrf_token %}
@@ -993,6 +1047,7 @@
                 return false;
             } else {
                 $("#myFrom").submit();
+                document.getElementById("loader").style.display = "block";
             }
         });
 
@@ -1005,9 +1060,9 @@
             let basement = $("#basement").is(':checked');
             let interior = $("#interior").is(':checked');
 
-            let projectCost = landSize * floor * 1450;
-            let basementCost = basementArea * 1850 * 0.055;
-            let interiorCost = interiorArea * (40);
+            let projectCost = landSize * floor * parseInt('{{var.PAC}}');
+            let basementCost = basementArea * parseInt('{{var.BAC}}') * (parseFloat('{{var.BACS}}') / 100);
+            let interiorCost = interiorArea * parseInt('{{var.IAC}}');
             let estimateCost = 0;
 
             // console.log(projectCost);
@@ -1031,12 +1086,9 @@
             else {
 
                 for (let i = 0; i < checked.length; i++) {
-                    //console.log(checked[i].id);
-                    if (checked[i].id >= 100) {
-                        estimateCost += (checked[i].id) * 1;
-                    } else {
-                        estimateCost += (projectCost * checked[i].id) / 100;
-                    }
+
+                    estimateCost += (projectCost * checked[i].id) / 100;
+
                 }
 
                 if (interior && interiorCost != 0) {

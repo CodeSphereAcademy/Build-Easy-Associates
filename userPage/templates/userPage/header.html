@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,9 +26,15 @@
         }
     </style>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light py-3" style="z-index: 10000;">
+    <div id="loader" style="display: none;">
+        <div class="d-flex justify-content-center align-items-center bg-dark bg-opacity-75" style="height:100vh; width:100vw; z-index:11111111; position:fixed;">
+            <div id="x" class="bg-light d-flex justify-content-center align-items-center px-3 rounded">
+                <img src="{% static 'userPage/img/Load.gif' %}" width="50px" alt=""><h5 class="p-3 m-0 fw-bold">Loading...</h5>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light py-3" style="z-index: 2;">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="{% static 'userPage/img/archiFirmLogo.png' %}" class="me-2" height="30" alt="BEA Logo" />
@@ -194,5 +199,4 @@
     <!-- Footer -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
 </body>
-
 </html>

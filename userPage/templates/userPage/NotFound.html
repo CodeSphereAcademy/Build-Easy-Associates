@@ -1,0 +1,6 @@
+{% extends 'userPage/header.html' %} {% load static %} {% block content %}
+<div style="height: 100vh!important;">
+    <h1 class="position-absolute d-md-block w-100 text-center fw-bold d-none" style="top:50%;">{{param}} <span style="color:rgb(255, 0, 0);">Not Found</span></h1>
+    <h2 class="position-absolute d-block w-100 text-center fw-bold d-md-none" style="top:50%;">{{param}} <span style="color:rgb(255, 0, 0);">Not Found</span></h2>
+</div>
+{% endblock content %}

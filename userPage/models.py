@@ -1,5 +1,6 @@
 from datetime import date
 import email
+from tkinter import FALSE
 from django.db import models
 from psycopg2 import Date
 
@@ -59,6 +60,7 @@ class Post(models.Model):
     pic9 = models.ImageField(null=True,blank=True)
     pic10 = models.ImageField(null=True,blank=True)
     name = models.CharField(max_length=20,null=True)
+    amtPaid = models.IntegerField(null=True)
     detail = models.CharField(max_length=200)
     publishDate = models.DateField(default=date.today,null=True)
     def __str__(self):
@@ -92,6 +94,7 @@ class RecEmail(models.Model):
     phone = models.CharField(max_length=15)
     msg = models.CharField(max_length=2000)
     date = models.DateField(default=date.today,null=True)
+    read = models.BooleanField(default=False)
     def __str__(self):
         return self.name  
     class Meta:
@@ -102,7 +105,27 @@ class SendEmail(models.Model):
     title = models.CharField(max_length=40)
     msg = models.CharField(max_length=2000)
     date = models.DateField(default=date.today,null=True)
+    read = models.BooleanField(default=FALSE)
     def __str__(self):
         return self.client.name
     class Meta:
-        verbose_name = "Send Email"     
+        verbose_name = "Send Email"  
+
+class UpdateVariable(models.Model):
+    YOE = models.IntegerField(default=0)
+    totalProjects = models.IntegerField(default=0)
+    totalEmployees = models.IntegerField(default=0)
+    totalClients = models.IntegerField(default=0)
+    totalPartners = models.IntegerField(default=0)
+    totalCities = models.IntegerField(default=0)
+    totalArea = models.IntegerField(default=0)
+    PAC = models.IntegerField(default=0)
+    IAC = models.IntegerField(default=0)
+    BAC = models.IntegerField(default=0)
+    BACS = models.FloatField(default=0.00)
+    yt1 = models.CharField(null=True,default="",max_length=200)
+    yt2 = models.CharField(null=True,default="",max_length=200)
+    def __str__(self):
+        return "Variable"
+    class Meta:
+        verbose_name = "Variable"

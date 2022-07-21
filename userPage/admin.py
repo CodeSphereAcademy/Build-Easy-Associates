@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import ClientInfo, ClientServiceInfo, Post, Project, RecEmail, SendEmail, WorkPost, Team
+from .models import ClientInfo, ClientServiceInfo, Post, Project, RecEmail, SendEmail, UpdateVariable, WorkPost, Team
 
 class ClientInfoAdmin(admin.ModelAdmin):
-    list_display = ('id','name','phone','totalCost')
+    list_display = ('id','name','phone','totalCost','approved')
 
 class ClientServiceInfoAdmin(admin.ModelAdmin):
     list_display = ('id','name','cost')    
@@ -36,3 +36,4 @@ admin.site.register(Project)
 admin.site.register(Team,TeamAdmin)
 admin.site.register(RecEmail,ReceivedEmail)
 admin.site.register(SendEmail,SendedEmail)
+admin.site.register(UpdateVariable)

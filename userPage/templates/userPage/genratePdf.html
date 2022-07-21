@@ -118,10 +118,10 @@
                 <div class="row text-start">
                     <div class="mb-3 top-0">
                         <div class="card-body text-center" style="margin-top: -60px;">
-                            <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-3 " width="80%">
+                            <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-1" width="50%">
                         </div>
                     </div>
-                    <div class="card mb-3">
+                    <div class="card mb-1">
                     <div class="card-body">
                         <div class="row d-flex justify-content-center align-items-center">
                         <div class="col-3">
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                     </div>
-                    <div class="card mb-3">
+                    <div class="card mb-1">
                     <div class="card-body">
                         <div class="row">
                             <p class="d-flex align-items-center mb-3 fw-bold">Personal Details</p>
@@ -148,33 +148,40 @@
                         </div>
                     </div>
                     </div>
-                    <div class="card mb-3">
+                    <div class="card mb-1">
                     <div class="card-body">
                         <div class="row">
                             <p class="d-flex align-items-center mb-3 fw-bold">Project Details</p>
+                            <div class="border py-1"><small>Project Title: <span class="text-primary">{{client.projectTitle}}</span></small></div>
                             <div class="border py-1"><small>Project Cost: <span class="text-primary">{{client.totalCost}} Rs.</span></small></div>
-                            <div class="border py-1"><small>Plot Size: <span class="text-primary">{{client.plotSize}} Sqft.</span></small></div>
-                            <div class="border py-1"><small>Location: <span class="text-primary">{{client.plotAddress}}</span></small></div>
-                            <div class="border py-1"><small>Description: <span class="text-primary">{{client.projectDescription}}</span></small></div>
+                            <div class="border py-1"><small>Plot Area: <span class="text-primary">{{client.plotSize}} Sqft.</span></small></div>
+                            <div class="border py-1"><small>Plot Address: <span class="text-primary">{{client.plotAddress}}</span></small></div>
+                            <div class="border py-1"><small>No. of Floors: <span class="text-primary">{{client.numFloor}}</span></small></div>
+                            <div class="border py-1"><small>Built-Up Area: <span class="text-primary">{{client.builtArea}} Sqft.</span></small></div>
+                            <div class="border py-1"><small>Interior Area: <span class="text-primary">{{client.interiorArea}} Sqft.</span></small></div>
+                            <div class="border py-1"><small>Basement Area: <span class="text-primary">{{client.basementArea}} Sqft.</span></small></div>
+                            <div class="border py-1"><small>Requirements: <span class="text-primary">{{client.clientRequirements}}</span></small></div>
+                            <div class="border py-1"><small>Start Date: <span class="text-primary">{{client.projectStartDate}}</span></small></div>
+                            <div class="border py-1"><small>End Date: <span class="text-primary">{{client.projectEndDate}}</span></small></div>
                         </div>
                     </div>
                     </div>
-                    <div class="card mb-3 col-6">
+                    <div class="card mb-1 col-5">
                         <div class="card-body">
                         <p class="d-flex align-items-center mb-3 fw-bold">Services Opted</p>
                         <div class="row">
                             {% for service in client.serviceOpted.all %}
-                            <div class="border py-1"><small>{{service.name}}</small></div>
+                            <div class="border py-1 col-6"><small>{{service.name}}</small></div>
                             {% endfor %}
                         </div>
                         </div>
                     </div>
-                    <div class="card mb-3 col-6">
+                    <div class="card mb-1 col-7">
                         <div class="card-body">
-                            <p class="d-flex align-items-center mb-3 fw-bold">Project Status</p>
+                            <p class="d-flex align-items-center mb-3 fw-bold">Project Posts</p>
                             <div class="row">
                             {% for post in posts %}
-                            <div class="border py-1"><small>#{{forloop.counter}} - {{post.detail}} / {{post.publishDate}}</small></div>
+                            <div class="border py-1 col-6"><small>{{forloop.counter}}) {{post.name}} <span class="text-primary">[{{post.publishDate|date:"d/m/y"}}]</span></small></div>
                             {% endfor %}
                             </div>
                         </div>
@@ -192,36 +199,64 @@
             <p>This is a wider card with supporting text below as a natural lead-in to
                 additional content. This content is a little bit longer.</p>
             <div class="row px-0 mb-3">
+                {% if post.pic1 %}  
                 <div class="col-6">
                     <img src="{{post.pic1.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
+                {% if post.pic2 %}  
                 <div class="col-6">
                     <img src="{{post.pic2.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
             </div>
             <div class="row px-0 mb-3">
+                {% if post.pic3 %}  
                 <div class="col-6">
                     <img src="{{post.pic3.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
+                {% if post.pic4 %}  
                 <div class="col-6">
                     <img src="{{post.pic4.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
             </div>
             <div class="row px-0 mb-3">
+                {% if post.pic5 %}  
                 <div class="col-6">
-                    <img src="{{post.pic1.url}}" class="img-fluid rounded"/>
+                    <img src="{{post.pic5.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
+                {% if post.pic6 %}  
                 <div class="col-6">
-                    <img src="{{post.pic2.url}}" class="img-fluid rounded"/>
+                    <img src="{{post.pic6.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
             </div>
-            <div class="row px-0">
+            <div class="row px-0 mb-3">
+                {% if post.pic7 %}  
                 <div class="col-6">
-                    <img src="{{post.pic3.url}}" class="img-fluid rounded"/>
+                    <img src="{{post.pic7.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
+                {% if post.pic8 %}  
                 <div class="col-6">
-                    <img src="{{post.pic4.url}}" class="img-fluid rounded"/>
+                    <img src="{{post.pic8.url}}" class="img-fluid rounded"/>
                 </div>
+                {% endif %}
+            </div>
+            <div class="row px-0 mb-3">
+                {% if post.pic9 %}  
+                <div class="col-6">
+                    <img src="{{post.pic9.url}}" class="img-fluid rounded"/>
+                </div>
+                {% endif %}
+                {% if post.pic10 %}  
+                <div class="col-6">
+                    <img src="{{post.pic10.url}}" class="img-fluid rounded"/>
+                </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}

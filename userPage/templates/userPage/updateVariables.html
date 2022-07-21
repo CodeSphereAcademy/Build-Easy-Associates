@@ -1,0 +1,89 @@
+{% extends 'userPage/header.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="border border-2 my-4">
+        <ol class="breadcrumb my-0 p-2">
+            <li class="breadcrumb-item fw-bold"><a href="{% url 'adminPage' %}">Admin</a></li>
+            <li class="breadcrumb-item active">Update Variables</li>
+        </ol>
+    </nav>
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="text-start pb-3" id="below">Update Variables</h1>
+        </div>
+    </div>
+    <form action="{% url 'updateVariables' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="hidden" name="id" value="{{var.id}}">    
+
+        <div class="form-outline mb-3">
+            <input type="number" name="YOE" id="YOE" class="form-control" value="{{var.YOE}}" required/>
+            <label class="form-label" for="YOE">Enter Year of Experience</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="totalProjects" id="totalProjects" class="form-control" value="{{var.totalProjects}}" required/>
+            <label class="form-label" for="totalProjects">Enter Total Projects</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="totalEmployees" id="totalEmployees" class="form-control" value="{{var.totalEmployees}}" required/>
+            <label class="form-label" for="totalEmployees">Enter Total Employees</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="totalClients" id="totalClients" class="form-control" value="{{var.totalClients}}" required/>
+            <label class="form-label" for="totalClients">Enter Total Clients</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="totalPartners" id="totalPartners" class="form-control" value="{{var.totalPartners}}" required/>
+            <label class="form-label" for="totalPartners">Enter Total Partners</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="totalCities" id="totalCities" class="form-control" value="{{var.totalCities}}" required/>
+            <label class="form-label" for="totalCities">Enter Total Cities</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="totalArea" id="totalArea" class="form-control" value="{{var.totalArea}}" required/>
+            <label class="form-label" for="totalArea">Enter Total Area ( in thousands [k] )</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="PAC" id="PAC" class="form-control" value="{{var.PAC}}" required/>
+            <label class="form-label" for="PAC">Normal Plot Area Cost ( per sqft. )</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="IAC" id="IAC" class="form-control" value="{{var.IAC}}" required/>
+            <label class="form-label" for="IAC">Interior Area Cost ( per sqft. )</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" name="BAC" id="BAC" class="form-control" value="{{var.BAC}}" required/>
+            <label class="form-label" for="BAC">Basement Area Cost ( per sqft. )</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="number" step="0.001" name="BACS" id="BACS" class="form-control" value="{{var.BACS}}" required/>
+            <label class="form-label" for="BACS">Basement Service Cost ( in percentage )</label>
+        </div>
+        
+        <div class="form-outline mb-3">
+            <input type="text" name="ytLink1" id="ytLink1" class="form-control" value="{{var.yt1}}" required/>
+            <label class="form-label" for="ytLink1">Paste Youtube Link 1</label>
+        </div>
+
+        <div class="form-outline mb-3">
+            <input type="text" name="ytLink2" id="ytLink2" class="form-control" value="{{var.yt2}}" required/>
+            <label class="form-label" for="ytLink2">Paste Youtube Link 2</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block mb-4">Update Variables</button>
+    </form>
+</div>
+{% endblock content %}

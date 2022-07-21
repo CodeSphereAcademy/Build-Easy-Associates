@@ -47,9 +47,15 @@
         box-shadow: none!important;
     }
 </style>
-<div class="text-center">
-    <div class="d-flex justify-content-center align-items-center flex-column">
-        <div class="row container px-0 mt-3 text-start fw-bold">
+<div class="text-center container">
+    <nav aria-label="breadcrumb" class="border border-2 mt-4 mb-3 container">
+        <ol class="breadcrumb my-0 p-2">
+            <li class="breadcrumb-item fw-bold"><a href="{% url 'adminPage' %}">Admin</a></li>
+            <li class="breadcrumb-item active">Project Details</li>
+        </ol>
+    </nav>
+    <div class="mx-auto px-0">
+        <div class="row px-0 mt-4 text-start fw-bold">
             <div class="col-md-6 mb-3">
                 <div class="card mb-3">
                     <div class="card-body">

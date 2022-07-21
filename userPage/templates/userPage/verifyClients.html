@@ -2,6 +2,14 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid w-100 my-4 ps-1 pe-1" style="overflow-x: auto;" id="clientList">
+    <div class="container mb-4">
+      <nav aria-label="breadcrumb" class="border border-2">
+        <ol class="breadcrumb my-0 p-2">
+            <li class="breadcrumb-item fw-bold"><a href="{% url 'adminPage' %}">Admin</a></li>
+            <li class="breadcrumb-item active">Verify Clients</li>
+        </ol>
+      </nav>
+    </div>
     <table class="table align-middle mb-0 bg-white">
         <thead class="bg-dark text-light">
             <tr>
@@ -85,12 +93,12 @@
                       <label class="form-label" for="projectTitle">Enter Project Title</label>
                     </div>
                     <div class="form-outline mb-3">
-                      <input type="number" id="tokenAmount" name="tokenAmount" class="form-control" required/>
-                      <label class="form-label" for="tokenAmount">Enter Token Amount</label>
-                    </div>
-                    <div class="form-outline mb-3">
                       <input type="number" id="finalProjectCost" name="finalProjectCost" class="form-control" required/>
                       <label class="form-label" for="finalProjectCost">Enter Final Project Cost</label>
+                    </div>
+                    <div class="form-outline mb-3">
+                      <input type="number" id="tokenAmount" name="tokenAmount" class="form-control" required/>
+                      <label class="form-label" for="tokenAmount">Enter Token Amount</label>
                     </div>
                     <div class="form-outline mb-3">
                       <input type="text" id="reqClient" name="reqClient" class="form-control" required/>

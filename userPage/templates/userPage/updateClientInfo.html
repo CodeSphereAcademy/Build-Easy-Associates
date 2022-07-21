@@ -1,12 +1,25 @@
 {% extends 'userPage/header.html' %} {% load static %} {% block content %}
-<div class="container" style="max-width:1000px;">
-    <div class="d-flex justify-content-between align-items-center mt-3">
+<div class="container">
+    <div class="my-4">
+        <nav aria-label="breadcrumb" class="border border-2">
+          <ol class="breadcrumb my-0 p-2">
+              <li class="breadcrumb-item fw-bold"><a href="{% url 'adminPage' %}">Admin</a></li>
+              <li class="breadcrumb-item fw-bold"><a href="{% url 'verifyClients' %}">Verify</a></li>
+              <li class="breadcrumb-item fw-bold"><a href="{% url 'clientInfo' client.id %}">Info</a></li>
+              <li class="breadcrumb-item active">Edit Info</li>
+          </ol>
+        </nav>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="text-start py-3" id="below">Update Client's Info</h1>
+            <h1 class="text-start pb-3" id="below">Update Client's Info</h1>
         </div>
     </div>
     <form method="POST" action="{% url 'updateClientInfo' client.id %}" id="myForm">
         {% csrf_token %}
+
+        <input type="hidden" id="id" name="id" class="form-control" value="{{client.id}}"/>
+
         <!-- Name input -->
         <div class="form-outline mb-4">
             <input type="text" id="name" name="name" class="form-control" value="{{client.name}}" required />
@@ -39,13 +52,13 @@
     
         <!-- ApproxPlotSize input -->
         <div class="form-outline mb-4">
-            <input type="number" id="approxplotsize" name="approxplotsize" class="form-control" value="{{client.builtPlotSize}}" required />
+            <input type="number" id="approxplotsize" name="approxplotsize" class="form-control" value="{{client.builtArea}}" required />
             <label class="form-label">Enter Super built-up area (in Sqft.)</label>
         </div>
     
         <!-- NumOfFloors input -->
         <div class="form-outline mb-4">
-            <input type="number" id="numfloor" name="numfloor" class="form-control" value="{{client.noFloors}}" required />
+            <input type="number" id="numfloor" name="numfloor" class="form-control" value="{{client.numFloor}}" required />
             <label class="form-label">Enter Number of floors</label>
         </div>
     
@@ -57,21 +70,65 @@
     
         <!-- Description input -->
         <div class="form-outline mb-4">
-            <textarea class="form-control" id="prodesc" name="prodesc" rows="3" value="{{client.projectDescription}}"></textarea>
+            <textarea class="form-control" id="prodesc" name="prodesc" rows="3">{{client.projectDescription}}</textarea>
             <label class="form-label">Enter Project Description...</label>
         </div>
     
         <!-- Service input -->
         <div class="form-outline mb-4 border border-3 rounded-2 p-3">
             <h6>Which services you want to take???</h6>
-    
+            {{serviceOpted}}
             <div class="row px-3">
                 {% if service %}
                 {% for s in service %}
+                {% if s in client.serviceOpted.all %}
+                {% if s.name == 'PMC' %}
+                <div class="form-check col-12 col-md-3">
+                    <input class="form-check-input PMCbox" type="checkbox" name="service" value="{{s.id}}" id="{{s.cost}}" checked/>
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% elif s.name == 'Supervision' %}
+                <div class="form-check col-12 col-md-3">
+                    <input class="form-check-input Supervisionbox" type="checkbox" name="service" value="{{s.id}}" id="{{s.cost}}" checked/>
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% elif s.name == 'Interior Designing' %}
+                <div class="form-check col-12 col-md-3 d-none">
+                    <input class="form-check-input Supervisionbox" type="checkbox" name="service" value="{{s.id}}" id="{{s.cost}}" checked/>
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% else %}
+                <div class="form-check col-12 col-md-3">
+                    <input class="form-check-input" type="checkbox" name="service" value="{{s.id}}" id="{{s.cost}}" checked/>
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% endif %}
+                {% else %}
+                {% if s.name == 'PMC' %}
+                <div class="form-check col-12 col-md-3">
+                    <input class="form-check-input PMCbox" type="checkbox" name="service" value="{{s.id}}"
+                        id="{{s.cost}}" />
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% elif s.name == 'Supervision' %}
+                <div class="form-check col-12 col-md-3">
+                    <input class="form-check-input Supervisionbox" type="checkbox" name="service" value="{{s.id}}"
+                        id="{{s.cost}}" />
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% elif s.name == 'Interior Designing' %}
+                <div class="form-check col-12 col-md-3 d-none">
+                    <input class="form-check-input Supervisionbox" type="checkbox" name="service" value="{{s.id}}"
+                        id="{{s.cost}}" />
+                    <label class="form-check-label">{{s.name}}</label>
+                </div>
+                {% else %}
                 <div class="form-check col-12 col-md-3">
                     <input class="form-check-input" type="checkbox" name="service" value="{{s.id}}" id="{{s.cost}}" />
                     <label class="form-check-label">{{s.name}}</label>
                 </div>
+                {% endif %}
+                {% endif %}
                 {% endfor %}
                 {% endif %}
             </div>
@@ -82,45 +139,53 @@
         <div class="form-check mb-4">
             <div class="row p-0 d-none d-md-block">
                 <div class="col-12">
+                    {% if client.interiorArea %}
                     <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior" 
-                        data-mdb-toggle="modal" href="#exampleModalToggle1" />
+                        data-mdb-toggle="modal" href="#exampleModalToggle1" checked/>
+                    {% else %}
+                    <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior" 
+                        data-mdb-toggle="modal" href="#exampleModalToggle1" />    
+                    {% endif %}
                     <label class="form-check-label">
                         Check out this if Interior required.
                     </label>
                 </div>
                 <div class="col-12">
+                    {% if client.basementArea %}
+                    <input class="form-check-input me-2" type="checkbox" name="basement" value="yes" id="basement"
+                        data-mdb-toggle="modal" href="#exampleModalToggle2" checked/>
+                    {% else %}
                     <input class="form-check-input me-2" type="checkbox" name="basement" value="yes" id="basement"
                         data-mdb-toggle="modal" href="#exampleModalToggle2" />
+                    {% endif %}    
                     <label class="form-check-label">
                         Check out this if Basement required.
-                    </label>
-                </div>
-                <div class="col-12">
-                    <input class="form-check-input me-2" type="checkbox" name="emailsend" value="yes" id="emailsend" />
-                    <label class="form-check-label">
-                        Send me a copy of this form via Email.
                     </label>
                 </div>
             </div>
             <div class="row p-0 d-md-none d-block">
                 <div class="col-10">
+                    {% if client.interiorArea %}
+                    <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior"
+                        data-mdb-toggle="modal" href="#exampleModalToggle1" checked/>
+                    {% else %}    
                     <input class="form-check-input" type="checkbox" name="interior" value="yes" id="interior"
                         data-mdb-toggle="modal" href="#exampleModalToggle1" />
+                    {% endif %}    
                     <label class="form-check-label" style="font-size: small;">
                         Check out this if Interior required.
                     </label>
                 </div>
                 <div class="col-10">
+                    {% if client.basementArea %}
+                    <input class="form-check-input" type="checkbox" name="basement" value="yes" id="basement"
+                        data-mdb-toggle="modal" href="#exampleModalToggle2" checked/>
+                    {% else %}
                     <input class="form-check-input" type="checkbox" name="basement" value="yes" id="basement"
                         data-mdb-toggle="modal" href="#exampleModalToggle2" />
+                    {% endif %}    
                     <label class="form-check-label" style="font-size: small;">
                         Check out this if Basement required.
-                    </label>
-                </div>
-                <div class="col-10">
-                    <input class="form-check-input" type="checkbox" name="emailsend" value="yes" id="emailsend" />
-                    <label class="form-check-label" style="font-size: small;">
-                        Send me a copy of this form via Email.
                     </label>
                 </div>
             </div>
@@ -148,7 +213,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-outline border rounded">
-                            <input type="number" id="budget" name="budget" class="form-control" />
+                            <input type="number" id="interiorArea" name="interiorArea" class="form-control" value="{{client.interiorArea}}"/>
                             <label class="form-label">Enter Proposed Area for Interior (in Sqft.)</label>
                         </div>
                     </div>
@@ -170,7 +235,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-outline border rounded">
-                            <input type="number" id="basementArea" name="basmentArea" class="form-control" />
+                            <input type="number" id="basementArea" name="basementArea" class="form-control" value="{{client.basementArea}}"/>
                             <label class="form-label">Enter Built-Up Area (in Sqft.)</label>
                         </div>
                     </div>
@@ -191,6 +256,20 @@
 
     $(document).ready(function () {
 
+        $(".Supervisionbox").change(function () {
+            if (this.checked) {
+                $('.PMCbox').prop('checked', false);
+                // console.log("Supervision");
+            }
+        });
+
+        $(".PMCbox").change(function () {
+            if (this.checked) {
+                $('.Supervisionbox').prop('checked', false);
+                // console.log("PMC");
+            }
+        });
+
         $("#submitBtn").click(function () {
             checked = $("input[type=checkbox]:checked").length;
             //console.log(checked);
@@ -204,7 +283,7 @@
 
         $('#estimateCost').click(function () {
             let landSize = $('#approxplotsize').val();
-            let interiorArea = $('#budget').val();
+            let interiorArea = $('#interiorArea').val();
             let basementArea = $('#basementArea').val();
             let floor = $('#numfloor').val();
 
@@ -254,7 +333,7 @@
                 }
 
                 $('#estimatedcostlabel').hide();
-                $('#estimatedcost').val("( " + estimateCost + " - " + (estimateCost + (estimateCost * 0.10)).toFixed() + " )" + " Rs/-");
+                $('#estimatedcost').val( estimateCost  + " Rs/-");
             }
         })
 

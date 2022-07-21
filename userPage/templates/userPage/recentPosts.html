@@ -49,9 +49,15 @@
 </style>
 <!-- Gallery -->
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center mt-3">
+    <nav aria-label="breadcrumb" class="border border-2 my-4">
+        <ol class="breadcrumb my-0 p-2">
+            <li class="breadcrumb-item fw-bold"><a href="{% url 'adminPage' %}">Admin</a></li>
+            <li class="breadcrumb-item active">Recent Posts</li>
+        </ol>
+    </nav>
+    <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="text-start py-2" id="below">Recent Posts</h1>
+            <h1 class="text-start pb-2" id="below">Recent Posts</h1>
         </div>
     </div>
     <div class="mx-auto px-0 py-3">
@@ -65,7 +71,7 @@
                     <img
                     src="{{post.pic1.url}}"
                     alt="{{post.detail}}"
-                    class="img-thumbnail rounded-start w-100 border border-dark"
+                    class="img-thumbnail rounded-start w-100"
                     style="height: 200px!important;"
                     />
                 </div>
@@ -86,7 +92,7 @@
         </div>
         {% endfor %}
         {% else %}
-        <h1 class="text-center my-3 p-5">No Posts available!!!</h1>
+        <h1 class="text-center pt-5 mt-5" style="height:55vh;">No Posts available!!!</h1>
         {% endif %}
         </div>
     </div>

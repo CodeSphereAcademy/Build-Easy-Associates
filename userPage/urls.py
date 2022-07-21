@@ -28,6 +28,9 @@ urlpatterns = [
     path('updateTeams/',views.updateTeams,name="updateTeams"),
     path('updateClientInfo/<int:id>',views.updateClientInfo,name="updateClientInfo"),
     path('emailQueries/',views.emailQueries,name="emailQueries"),
-    path('projectWrapUp/',views.projectWrapUp,name="projectWrapUp"),
+    path('updateVariables/',views.updateVar,name="updateVariables"),
     path('genratePdf/<int:id>',views.genratePdf,name="genratePdf"),
+    path('notFound/<str:param>',views.pageNotFound,name="notFound"),
+    path('rRead/<int:id>',views.rRead,name="rRead"),
+    path('sRead/<int:id>',views.sRead,name="sRead")
 ]

@@ -1,8 +1,15 @@
 {% extends 'userPage/header.html' %} {% load static %} {% block content %}
-<div class="container" style="max-width:1000px;">
-    <div class="d-flex justify-content-between align-items-center mt-3">
+<div class="container">
+    <nav aria-label="breadcrumb" class="border border-2 my-4">
+        <ol class="breadcrumb my-0 p-2">
+            <li class="breadcrumb-item fw-bold"><a href="{% url 'adminPage' %}">Admin</a></li>
+            <li class="breadcrumb-item active"><a href="{% url 'project' project.client.id %}">Project Details</a></li>
+            <li class="breadcrumb-item active">New Post</li>
+        </ol>
+    </nav>
+    <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="text-start py-3" id="below">New Post's Deatils</h1>
+            <h1 class="text-start pb-3" id="below">New Post's Deatils</h1>
         </div>
     </div>
     <form action="{% url 'postUpload' %}" method="POST" enctype="multipart/form-data">
@@ -10,18 +17,31 @@
 
         <input type="hidden" name="clientId" id="clientId" value="{{project.client.id}}"/>
 
-        <!-- Name input -->
-        <div class="form-outline mb-3">
-            <input type="text" name="projectClientName" id="projectClientName" class="form-control" disabled/>
-            <label class="form-label" for="projectClientName">Client - <b>{{project.client.name}}</b> / <b>{{project.client.referenceID}}</b></label>
+        <div class="row px-0">
+            <div class="col-12 col-md-6">
+                <div class="form-outline mb-3 ">
+                    <input type="text" name="projectClientName" id="projectClientName" class="form-control" disabled/>
+                    <label class="form-label" for="projectClientName">Client - <b>{{project.client.name}}</b> / <b>{{project.client.referenceID}}</b></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-outline mb-3 ">
+                    <input type="text" name="projectPendingAmt" id="projectPendingAmt" class="form-control" disabled/>
+                    <label class="form-label" for="projectPendingAmt">Client Pending Amount - <b>{{project.client.pendingAmount}} Rs.</b></label>
+                </div>
+            </div>
         </div>
 
         <div class="form-outline mb-3">
             <input type="text" name="postName" id="postName" class="form-control" required/>
             <label class="form-label" for="postName">Enter Post Name</label>
         </div>
+
+        <div class="form-outline mb-3">
+            <input type="text" name="pendingAmt" id="pendingAmt" class="form-control" required/>
+            <label class="form-label" for="pendingAmt">Enter Amount Paid</label>
+        </div>
         
-        <!-- Message input -->
         <div class="form-outline mb-3">
             <textarea class="form-control" name="postDetail" id="projectDetail" rows="3" required></textarea>
             <label class="form-label" for="postDetail">Enter Post Details Here...</label>
@@ -72,7 +92,6 @@
         
         </div>
 
-        <!-- Submit button -->
         <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
     </form>
 </div>

@@ -47,84 +47,91 @@
         box-shadow: none!important;
     }
 </style>
-<div class="text-center">
-    <div class="d-flex justify-content-center align-items-center flex-column">
-        <div class="row gutters-sm container px-0 mt-3 text-start fw-bold">
-            <div class="col-md-6 mb-3">
-              <div class="card bg-dark bg-gradient bg-opacity-10">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="145">
-                    <div class="mt-3">
-                        <div class="mb-3">
-                            <a href="tel:+91{{client.phone}}" class="btn btn-outline-success btn-rounded py-1 fw-bold"><i class="fas fa-phone me-1"></i> Call</a>
-                            <a href="{% url 'updateClientInfo' client.id %}" class="btn btn-outline-secondary btn-rounded py-1 fw-bold"><i class="fas fa-edit me-1"></i>Edit</a>
-                        </div> 
-                        <h4 class="text-dark my-2">#{{client.id}}. {{client.name}}</h4>
-                        <p class="text-dark font-size-sm">{{client.address}}</p>
-                    </div>
-                  </div>
+<div class="text-center container">
+    <div class="my-4">
+        <nav aria-label="breadcrumb" class="border border-2">
+          <ol class="breadcrumb my-0 p-2">
+              <li class="breadcrumb-item fw-bold"><a href="{% url 'adminPage' %}">Admin</a></li>
+              <li class="breadcrumb-item fw-bold"><a href="{% url 'verifyClients' %}">Verify Clients</a></li>
+              <li class="breadcrumb-item active">Client Info</li>
+          </ol>
+        </nav>
+    </div>
+    <div class="row px-0 mt-3 text-start fw-bold">
+        <div class="col-md-6 mb-3">
+            <div class="card bg-dark bg-gradient bg-opacity-10">
+            <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="145">
+                <div class="mt-3">
+                    <div class="mb-3">
+                        <a href="tel:+91{{client.phone}}" class="btn btn-outline-success btn-rounded py-1 fw-bold"><i class="fas fa-phone me-1"></i> Call</a>
+                        <a href="{% url 'updateClientInfo' client.id %}" class="btn btn-outline-secondary btn-rounded py-1 fw-bold"><i class="fas fa-edit me-1"></i>Edit</a>
+                    </div> 
+                    <h4 class="text-dark my-2">#{{client.id}}. {{client.name}}</h4>
+                    <p class="text-dark font-size-sm">{{client.address}}</p>
                 </div>
-              </div>
-              <div class="card mt-3 bg-dark bg-gradient bg-opacity-75">
-                <div class="card-body ">
-                    <div class="row">
-                        <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Personal Details</h6>
-                        <div class="border py-1 rounded" style="background-color: white"><small>Name: <span class="text-primary">{{client.name}}</span></small></div>
-                        <div class="border py-1 rounded" style="background-color: white"><small>Mobile: <span class="text-primary">{{client.phone}}</span></small></div>
-                        <div class="border py-1 rounded" style="background-color: white"><small>Email: <span class="text-primary">{{client.email}}</span></small></div>
-                        <div class="border py-1 rounded" style="background-color: white"><small>Address: <span class="text-primary">{{client.address}}</span></small></div>
-                    </div>
                 </div>
-              </div>
             </div>
-            <div class="col-md-6">
-                {% if client.approved %}
-                <div class="card mb-3 bg-dark bg-gradient bg-opacity-75">
-                    <div class="card-body">
-                        <div class="row">
-                            <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Project Info</h6>
-                            <div class="border py-1 rounded" style="background-color: white"><small>Project Title: <span class="text-primary">{{client.projectTitle}}</span></small></div>
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Project Status: <span class="text-primary">{{client.projectStatus}}</span></small></div>
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Requirements: <span class="text-primary">{{client.clientRequirements}}</span></small></div>
-                            <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>Token Amount: <span class="text-primary">{{client.tokenAmount}} Rs.</span></small></div>
-                            <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>Pending Amount: <span class="text-primary">{{client.pendingAmount}} Rs.</span></small></div>
-                            <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>Start Date: <span class="text-primary">{{client.projectStartDate}}</span></small></div>
-                            <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>End Date: <span class="text-primary">{{client.projectEndDate}}</span></small></div>
-                        </div>
-                    </div>
-                </div>  
-                {% endif %}
-                <div class="card mb-3 bg-dark bg-gradient bg-opacity-75">
-                    <div class="card-body">
-                        <div class="row">
-                            <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Project Details</h6>
-                            <div class="border py-1 rounded" style="background-color: white"><small>Project Cost: <span class="text-primary">{{client.totalCost}} Rs.</span></small></div>
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Plot Size: <span class="text-primary">{{client.plotSize}} Sqft.</span></small></div>
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Built Area: <span class="text-primary">{{client.builtArea}} Sqft.</span></small></div>
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Number of Floors: <span class="text-primary">{{client.numFloor}} Floors</span></small></div>
-                            {% if client.interiorArea != 0 %}
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Interior Area: <span class="text-primary">{{client.interiorArea}} Sqft.</span></small></div>
-                            {% endif %}
-                            {% if client.basementArea != 0 %}
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Basement Area: <span class="text-primary">{{client.basementArea}} Sqft.</span></small></div>
-                            {% endif %}
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Location: <span class="text-primary">{{client.plotAddress}}</span></small></div>
-                            <div class="border py-1 rounded" style="background-color: white;"><small>Description: <span class="text-primary">{{client.projectDescription}}</span></small></div>
-                        </div>
+            </div>
+            <div class="card mt-3 bg-dark bg-gradient bg-opacity-75">
+            <div class="card-body ">
+                <div class="row">
+                    <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Personal Details</h6>
+                    <div class="border py-1 rounded" style="background-color: white"><small>Name: <span class="text-primary">{{client.name}}</span></small></div>
+                    <div class="border py-1 rounded" style="background-color: white"><small>Mobile: <span class="text-primary">{{client.phone}}</span></small></div>
+                    <div class="border py-1 rounded" style="background-color: white"><small>Email: <span class="text-primary">{{client.email}}</span></small></div>
+                    <div class="border py-1 rounded" style="background-color: white"><small>Address: <span class="text-primary">{{client.address}}</span></small></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            {% if client.approved %}
+            <div class="card mb-3 bg-dark bg-gradient bg-opacity-75">
+                <div class="card-body">
+                    <div class="row">
+                        <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Project Info</h6>
+                        <div class="border py-1 rounded" style="background-color: white"><small>Project Title: <span class="text-primary">{{client.projectTitle}}</span></small></div>
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Project Status: <span class="text-primary">{{client.projectStatus}}</span></small></div>
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Requirements: <span class="text-primary">{{client.clientRequirements}}</span></small></div>
+                        <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>Token Amount: <span class="text-primary">{{client.tokenAmount}} Rs.</span></small></div>
+                        <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>Pending Amount: <span class="text-primary">{{client.pendingAmount}} Rs.</span></small></div>
+                        <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>Start Date: <span class="text-primary">{{client.projectStartDate}}</span></small></div>
+                        <div class="border py-1 rounded col-12 col-md-6" style="background-color: white;"><small>End Date: <span class="text-primary">{{client.projectEndDate}}</span></small></div>
                     </div>
                 </div>
-                <div class="row gutters-sm">
-                    <div class="col-12 mb-3">
-                        <div class="card h-100 bg-dark bg-gradient bg-opacity-75">
-                            <div class="card-body">
-                            <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Services Opted</h6>
-                            <div class="row">
-                                {% for service in client.serviceOpted.all %}
-                                <div class="border py-1 rounded col-12 col-md-6" style="background-color: white"><small>{{forloop.counter}}). {{service.name}}</small></div>
-                                {% endfor %}
-                            </div>
-                            </div>
+            </div>  
+            {% endif %}
+            <div class="card mb-3 bg-dark bg-gradient bg-opacity-75">
+                <div class="card-body">
+                    <div class="row">
+                        <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Project Details</h6>
+                        <div class="border py-1 rounded" style="background-color: white"><small>Project Cost: <span class="text-primary">{{client.totalCost}} Rs.</span></small></div>
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Plot Size: <span class="text-primary">{{client.plotSize}} Sqft.</span></small></div>
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Built Area: <span class="text-primary">{{client.builtArea}} Sqft.</span></small></div>
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Number of Floors: <span class="text-primary">{{client.numFloor}} Floors</span></small></div>
+                        {% if client.interiorArea != 0 %}
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Interior Area: <span class="text-primary">{{client.interiorArea}} Sqft.</span></small></div>
+                        {% endif %}
+                        {% if client.basementArea != 0 %}
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Basement Area: <span class="text-primary">{{client.basementArea}} Sqft.</span></small></div>
+                        {% endif %}
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Location: <span class="text-primary">{{client.plotAddress}}</span></small></div>
+                        <div class="border py-1 rounded" style="background-color: white;"><small>Description: <span class="text-primary">{{client.projectDescription}}</span></small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gutters-sm">
+                <div class="col-12 mb-3">
+                    <div class="card h-100 bg-dark bg-gradient bg-opacity-75">
+                        <div class="card-body">
+                        <h6 class="d-flex align-items-center mb-3 fw-bold text-light">Services Opted</h6>
+                        <div class="row">
+                            {% for service in client.serviceOpted.all %}
+                            <div class="border py-1 rounded col-12 col-md-6" style="background-color: white"><small>{{forloop.counter}}). {{service.name}}</small></div>
+                            {% endfor %}
+                        </div>
                         </div>
                     </div>
                 </div>
