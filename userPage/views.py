@@ -194,8 +194,17 @@ def verifyClients(request):
         client.save()
         project = WorkPost.objects.create(client=client)
         project.save()
-        msg = "Hello, "+str(client.name)+"\nYour Reference ID: "+str(client.referenceID)+"\nAmount Paid: "+str(client.tokenAmount)+"\nPending Amount: "+str(client.pendingAmount)+"\n\nRegards,\nBuild-Easy"
-        send_mail(str(name)+" - Token Received",str(msg),"buildeasy01@gmail.com",[str(client.email)])
+        msg = """Hello {name}, 
+
+BUILD- EASY ASSOCIATES has approved your project. To track your project, use the reference ID {refID}. Enjoy our services.
+
+RECEIVED AMOUNT- {tokenAmt}
+PENDING AMOUNT- {pendingAmt}
+
+Regards,
+BUILD-EASY ASSOCIATES
+""".format(name=str(client.name),refID=str(client.referenceID),tokenAmt=str(client.tokenAmount),pendingAmt=str(client.pendingAmount))
+        send_mail(str(name)+" - APPROVAL OF PROJECT",str(msg),"buildeasy01@gmail.com",[str(client.email)])
         email = SendEmail.objects.create(client=client,title="Token Received - "+str(client.name),msg=msg)
         email.save()
     return render(request,'userPage/verifyClients.html',{'clients':clients})    
@@ -272,6 +281,18 @@ def postUpload(request,id=0):
         post.save()
         client.pendingAmount = int(client.pendingAmount) - int(amtPaid)
         client.save()
+        msg = """Hello, {name}
+
+Your project has been updated. To track your project, use the reference ID {refID}. Enjoy our services.
+Amount Received- {amtReceived}
+Pending Amount- {pendingAmt}
+
+Regards
+BUILD-EASY ASSOCIATES
+""".format(name=str(client.name),refID=str(client.referenceID),amtReceived=str(amtPaid),pendingAmt=str(client.pendingAmount))
+        send_mail(str(name)+" - Project Updated",str(msg),"buildeasy01@gmail.com",[str(client.email)])
+        email = SendEmail.objects.create(client=client,title="Project Updated - "+str(client.name),msg=msg)
+        email.save()
         return redirect(project,id=id,permanent=True)
     else:    
         client = ClientInfo.objects.get(id=id)

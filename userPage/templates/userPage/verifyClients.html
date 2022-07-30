@@ -1,4 +1,4 @@
-{% extends 'userPage/header.html' %}
+{% extends 'userPage/headerAdmin.html' %}
 {% load static %}
 {% block content %}
 <div class="container-fluid w-100 my-4 ps-1 pe-1" style="overflow-x: auto;" id="clientList">
@@ -10,49 +10,51 @@
         </ol>
       </nav>
     </div>
-    <table class="table align-middle mb-0 bg-white">
+    <div class="container mb-4">
+      <table class="table mb-0 bg-white px-0">
         <thead class="bg-dark text-light">
             <tr>
-                <th style="width:240px!important;" class="fw-bold">Name / Phone No.</th>
-                <th style="width:150px!important;" class="fw-bold">Plot Size / Cost</th>
-                <th style="width:400px!important;" class="fw-bold">Plot / Permanent Address</th>
-                <th style="width:300px!important;" class="text-center fw-bold">Actions</th>
+                <th style="width:220px!important;" class="fw-bold">Name / Phone No.</th>
+                <th style="width:130px!important;" class="fw-bold">Plot Size</th>
+                <th style="width:100px!important;" class="fw-bold">Project Cost</th>
+                <th style="width:480px!important;" class="text-center fw-bold">Actions</th>
             </tr>
         </thead>
         {% for client in clients reversed %}
         <tbody>
             <tr>
                 <td>
-                    <div class="d-flex align-items-center" style="width:240px!important;">
+                    <div class="d-flex align-items-center" style="width:220px!important;">
                         <i class="fas fa-user-circle fa-3x" style="width: 45px; height: 45px" class="rounded-circle"></i>
                         <div class="ms-3">
-                            <p class="fw-bold mb-1">{{client.name}}</p>
-                            <p class="text-muted mb-0">+91-{{client.phone}}</p>
+                            <p class="fw-bold mb-1">{{client.name|truncatewords:2}}</p>
+                            <p class="text-muted mb-0">{{client.phone}}</p>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="d-flex align-items-center" style="width:150px!important;">
+                    <div class="d-flex align-items-center" style="width:130px!important;">
                         <div>
-                            <p class="fw-normal mb-1">{{client.plotSize}} Sqft.</p>
-                            <p class="text-muted mb-0">{{client.totalCost}} Rs.</p>
+                            <p class="fw-normal mb-1"><b>Plot:</b> {{client.plotSize}} Sqft.</p>
+                            <p class="fw-normal mb-0"><b>Built:</b> {{client.builtArea}} Sqft.</p>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="d-flex align-items-center" style="width:400px!important;">
-                        <div>
-                            <p class="mb-0"><span class="fw-bold">Plot - </span> {{client.plotAddress}}</p>
-                            <p class="mb-0"><span class="fw-bold">Permanent - </span> {{client.address}}</p>
-                        </div>
-                    </div>
+                  <div class="d-flex align-items-center justify-content-center mt-2 pt-1" style="width:100px!important;">
+                      <div>
+                          <p class="fw-bold text-success mb-0"><b>{{client.totalCost}} Rs.</b></p>
+                      </div>
+                  </div>
                 </td>
                 <td>
-                    <div class="d-flex align-items-center mx-auto" style="width:300px!important;">
+                    <div  class="d-flex align-items-center justify-content-center mt-2 pt-1" style="width:480px!important;">
                         <div>
-                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="{% url 'clientInfo' client.id %}"><i class="far fa-edit"></i> View</a>
-                            <a class="btn btn-outline-success btn-sm btn-rounded" data-mdb-toggle="modal" href="#approveModal{{client.id}}" role="button"><i class="far fa-check-circle"></i> Approve</a>
-                            <a class="btn btn-outline-danger btn-sm btn-rounded" data-mdb-toggle="modal" href="#deleteModal{{client.id}}" role="button"><i class="fas fa-trash-alt"></i> Cancel</a>
+                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="{% url 'clientInfo' client.id %}"><i class="far fa-edit me-1"></i> View</a>
+                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="{% url 'updateClientInfo' client.id %}" role="button"><i class="fas fa-pen me-1"></i> Edit</a>
+                            <a class="btn btn-outline-success btn-sm btn-rounded" href="tel:+91{{client.phone}}" role="button"><i class="fas fa-phone me-1"></i> Call</a>
+                            <a class="btn btn-success btn-sm btn-rounded" data-mdb-toggle="modal" href="#approveModal{{client.id}}" role="button"><i class="far fa-check-circle me-1"></i> Approve</a>
+                            <a class="btn btn-danger btn-sm btn-rounded" data-mdb-toggle="modal" href="#deleteModal{{client.id}}" role="button"><i class="fas fa-trash-alt me-1"></i> Cancel</a>
                         </div>
                     </div>    
                 </td>
@@ -146,7 +148,8 @@
           </div>
         </div>
         {% endfor %}
-    </table>
+      </table>
+    </div>
 </div>
 <script>
   var dtToday = new Date();

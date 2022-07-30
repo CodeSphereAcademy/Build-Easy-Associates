@@ -87,26 +87,42 @@
                     </div>
                 </div>
               </div>
+              {% if client.approved %}
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <div class="row">
+                          <h6 class="d-flex align-items-center mb-3 fw-bold">Project Info</h6>
+                              <div class="border py-1 rounded"><small>Project Title: <span class="text-primary">{{client.projectTitle}}</span></small></div>
+                              <div class="border py-1 rounded"><small>Project Status: <span class="text-primary">{{client.projectStatus}}</span></small></div>
+                              <div class="border py-1 rounded"><small>Requirements: <span class="text-primary">{{client.clientRequirements}}</span></small></div>
+                              <div class="border py-1 rounded col-12 col-md-6"><small>Token Amount: <span class="text-primary">{{client.tokenAmount}} Rs.</span></small></div>
+                              <div class="border py-1 rounded col-12 col-md-6"><small>Pending Amount: <span class="text-primary">{{client.pendingAmount}} Rs.</span></small></div>
+                              <div class="border py-1 rounded col-12 col-md-6"><small>Start Date: <span class="text-primary">{{client.projectStartDate}}</span></small></div>
+                              <div class="border py-1 rounded col-12 col-md-6"><small>End Date: <span class="text-primary">{{client.projectEndDate}}</span></small></div>
+                      </div>
+                  </div>
+              </div>
+              {% endif %}
               <div class="row gutters-sm">
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body">
                         <h6 class="d-flex align-items-center mb-3 fw-bold">Services Opted</h6>
                         <div class="row">
                             {% for service in client.serviceOpted.all %}
-                            <div class="border py-1"><small>{{service.name}}</small></div>
+                            <div class="border py-1"><small>{{forloop.counter}}). {{service.name}}</small></div>
                             {% endfor %}
                         </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8 mb-3">
+                <div class="col-sm-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body">
                             <h6 class="d-flex align-items-center mb-3 fw-bold">Project Status</h6>
                             <div class="row">
                             {% for post in posts %}
-                            <div class="border py-1"><small>#{{forloop.counter}} - {{post.detail}} / {{post.publishDate}}</small></div>
+                            <div class="border py-1"><small>{{forloop.counter}}). {{post.detail}} <i>( {{post.publishDate|date:"d-m-y"}} )</i></small></div>
                             {% endfor %}
                             </div>
                         </div>

@@ -10,13 +10,14 @@
           </ol>
         </nav>
     </div>
-    <table class="table align-middle mb-0 bg-white">
+    <div class="container mb-4">
+    <table class="table mb-0 bg-white px-0">
         <thead class="bg-dark text-light">
             <tr>
                 <th style="width:220px!important;">Name / Phone No.</th>
-                <th style="width:200px!important;">Project Title</th>
-                <th style="width:180px!important;" class="text-center">Project Status</th>
-                <th style="width:180px!important;" class="text-center">Project Dates</th>
+                <th style="width:150px!important;">Project Title</th>
+                <th style="width:100px!important;" class="text-center">Project Status</th>
+                <th style="width:150px!important;" class="text-center">Project Dates</th>
                 <th style="width:240px!important;" class="text-center">Actions</th>
             </tr>
         </thead>
@@ -27,27 +28,27 @@
                     <div class="d-flex align-items-center" style="width:220px!important;">
                         <i class="fas fa-user-circle fa-3x" style="width: 45px; height: 45px" class="rounded-circle"></i>
                         <div class="ms-3">
-                            <p class="fw-bold mb-1">{{project.client.name|truncatewords:2}}</p>
-                            <p class="text-muted mb-0">+91-{{project.client.phone}}</p>
+                            <p class="fw-bold mb-1">{{project.client.name|truncatewords:1}}</p>
+                            <p class="text-muted mb-0">{{project.client.phone}}</p>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="d-flex align-items-center" style="width:200px!important;">
+                    <div class="d-flex align-items-center mx-auto mt-2 pt-1" style="width:150px!important;">
                         <div>
                             <p class="fw-bold mb-1">{{project.client.projectTitle}}</p>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="d-flex align-items-center justify-content-center mx-auto" style="width:180px!important;">
+                    <div class="d-flex align-items-center justify-content-center mx-auto mt-2 pt-1" style="width:100px!important;">
                         <div>
                             <span class="badge badge-success rounded-pill d-inline px-3 py-2">{{project.client.projectStatus}}</span>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="d-flex align-items-center justify-content-center mx-auto" style="width:180px!important;">
+                    <div class="d-flex align-items-center justify-content-center mx-auto" style="width:150px!important;">
                         <div>
                             <p class="mb-1"><span class="fw-bold">Start - </span>{{project.client.projectStartDate}}</p>
                             <p class="mb-0"><span class="fw-bold">End - </span>{{project.client.projectEndDate}}</p>
@@ -55,7 +56,7 @@
                     </div>
                 </td>
                 <td class="text-end">
-                    <div class="d-flex align-items-center justify-content-center mx-auto" style="width:240px!important;">
+                    <div class="d-flex align-items-center justify-content-center mx-auto mt-2 pt-1" style="width:240px!important;">
                         <div>
                             <a class="btn btn-outline-success btn-sm btn-rounded" data-mdb-toggle="modal" href="#startModal{{project.client.id}}" role="button">
                                 Start
@@ -125,6 +126,7 @@
         </div>
         {% endfor %}
     </table>
+    </div>
 </div>
 <script>
     var dtToday = new Date();

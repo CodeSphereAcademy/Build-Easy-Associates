@@ -116,9 +116,9 @@
         <div class="text-center mx-auto page">
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <div class="row text-start">
-                    <div class="mb-3 top-0">
+                    <div class="mb-2 top-0">
                         <div class="card-body text-center" style="margin-top: -60px;">
-                            <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-1" width="50%">
+                            <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-1" width="60%">
                         </div>
                     </div>
                     <div class="card mb-1">
@@ -128,10 +128,11 @@
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="100">
                         </div>
                         <div class="col-9">
-                            <div class="my-3">
-                                <h4>{{client.name}}</h4>
-                                <p class="text-secondary">+91-{{client.phone}}</p>
-                                <p class="text-muted font-size-sm">{{client.address}}</p>
+                            <div class="my-1">
+                                <p class="fw-bold mb-2">{{client.name}} (#ID-{{client.referenceID}})</p>
+                                <p class="text-primary fw-normal mb-2">Project Area: {{client.plotSize}} Sqft.</p>
+                                <p class="text-success fw-normal mb-2">Project Cost: {{client.totalCost}} Rs.</p>
+                                <p class="fw-bold">Project Duration: ({{client.projectStartDate|date:"d/m/y"}} - {{client.projectEndDate|date:"d/m/y"}})</p>
                             </div>
                         </div>
                         </div>
@@ -266,8 +267,9 @@
         </div>
         <div class="page">
             <div class="text-center" style="margin-top: 60%;">
-                <h1 class="display-1">Thank You</h1>
-                <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-3 " width="60%">
+                <h3 class="display-3 my-0">Thank You</h3>
+                <img src="{% static 'userPage/img/printLogo.jpeg' %}" alt="logo" class="rounded p-2 mt-0" width="60%">
+                <p>follow us on: <a href="https://www.buildeasy01.com">www.buildeasy01.com</a></p>
             </div>
         </div>
     </div>

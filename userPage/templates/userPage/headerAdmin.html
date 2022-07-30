@@ -53,23 +53,8 @@
             <div class="collapse navbar-collapse" id="navbarRightAlignExample">
                 <!-- Left links -->
                 <ul class="navbar-nav ms-md-auto ms-2 mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link me-2 {{homeActive}}" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-2 {{projectsActive}}" aria-current="page" href="{% url 'userProjects' %}">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-2 {{aboutActive}}" aria-current="page" href="{% url 'userAbout' %}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-2 {{servicesActive}}" aria-current="page" href="{% url 'userServices' %}">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-2 {{contactActive}}" aria-current="page" href="{% url 'userContact' %}">Contact</a>
-                    </li>
                     <li class="nav-item  d-flex justify-content-center">
-                        <a class="nav-link ms-2 my-auto btn btn-outline-dark rounded rounded-pill px-3 text-dark d-md-block d-none" aria-current="page" href="{% url 'userToken' %}">Track Work</a>
+                        <a class="nav-link ms-2 my-auto btn btn-outline-dark rounded rounded-pill px-3 text-dark d-md-block d-none" aria-current="page" href="{% url 'adminPage' %}"><i class="fa fa-user me-1"></i> <b>Admin</b></a>
                     </li>
                 </ul>
                 <!-- Left links -->
@@ -79,16 +64,6 @@
         </div>
     </nav>
     {% block content %}{% endblock content %}
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-dark text-muted" style="background-color: rgba(0, 0, 0, 0.5);">
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.5);font-size: small;">
-            © 2021 Copyright Reserved<br>
-            <a class="text-reset fw-bold" href="#">www.build-easy-associates.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
 </body>
 </html>
