@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import ClientInfo, ClientServiceInfo, Post, Project, RecEmail, SendEmail, UpdateVariable, WorkPost, Team
 
 class ClientInfoAdmin(admin.ModelAdmin):
-    list_display = ('id','name','phone','totalCost','approved')
+    list_display = ('id','name','phone','totalCost','approved','projectStarted','projectStatus')
 
 class ClientServiceInfoAdmin(admin.ModelAdmin):
     list_display = ('id','name','cost')    
