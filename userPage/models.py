@@ -1,5 +1,4 @@
 from datetime import date
-import email
 from django.db import models
 from psycopg2 import Date
 
