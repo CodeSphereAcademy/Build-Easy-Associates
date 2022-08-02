@@ -94,4 +94,13 @@
         </div>
     </div>
 </div>
+<script>
+    setInterval(() => {
+        var preloader = document.getElementById("loader");
+        preloader.style.display = "none";
+        AOS.init({
+            once: true,
+        });
+    }, 1000);
+</script>
 {% endblock content %}

@@ -3,4 +3,13 @@
     <h1 class="position-absolute d-md-block w-100 text-center fw-bold d-none" style="top:50%;">{{param}} <span style="color:rgb(255, 0, 0);">Not Found</span></h1>
     <h2 class="position-absolute d-block w-100 text-center fw-bold d-md-none" style="top:50%;">{{param}} <span style="color:rgb(255, 0, 0);">Not Found</span></h2>
 </div>
+<script>
+    setInterval(() => {
+        var preloader = document.getElementById("loader");
+        preloader.style.display = "none";
+        AOS.init({
+            once: true,
+        });
+    }, 1000);
+</script>
 {% endblock content %}

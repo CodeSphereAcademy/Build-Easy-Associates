@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,24 +15,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <title>BUILD-EASY ASSOCIATES</title>
     <style>
-        body{
+        body {
             font-family: 'Montserrat', sans-serif;
         }
-        .active{
-            color:black;
+
+        .active {
+            color: black;
             font-weight: bold;
         }
     </style>
 </head>
+
 <body>
     <div id="loader" style="display: block;">
-        <div class="d-flex justify-content-center align-items-center bg-dark bg-opacity-75" style="height:100vh; width:100vw; z-index:11111111; position:fixed;">
+        <div class="d-flex justify-content-center align-items-center bg-dark bg-opacity-75"
+            style="height:100vh; width:100vw; z-index:11111111; position:fixed;">
             <div id="x" class="bg-light d-flex justify-content-center align-items-center px-3 rounded">
-                <img src="{% static 'userPage/img/Load.gif' %}" width="50px" alt=""><h5 class="p-3 m-0 fw-bold">Loading...</h5>
+                <img src="{% static 'userPage/img/Load.gif' %}" width="50px" alt="">
+                <h5 class="p-3 m-0 fw-bold">Loading...</h5>
             </div>
         </div>
     </div>
@@ -39,8 +45,10 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="{% static 'userPage/img/archiFirmLogo.png' %}" class="me-2" height="30" alt="BEA Logo" />
-                <h5 class="my-auto fw-bold d-none d-md-block" style="font-family: 'Raleway', sans-serif;">BUILD-EASY <span style="color:rgb(160, 0, 0);">ASSOCIATES</span></h5>
-                <h6 class="my-auto fw-bold d-block d-md-none" style="font-family: 'Raleway', sans-serif;">BUILD-EASY <span style="color:rgb(160, 0, 0);">ASSOCIATES</span></h6>
+                <h5 class="my-auto fw-bold d-none d-md-block" style="font-family: 'Raleway', sans-serif;">BUILD-EASY
+                    <span style="color:rgb(160, 0, 0);">ASSOCIATES</span></h5>
+                <h6 class="my-auto fw-bold d-block d-md-none" style="font-family: 'Raleway', sans-serif;">BUILD-EASY
+                    <span style="color:rgb(160, 0, 0);">ASSOCIATES</span></h6>
             </a>
 
             <!-- Toggle button -->
@@ -58,19 +66,24 @@
                         <a class="nav-link me-2 {{homeActive}}" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-2 {{projectsActive}}" aria-current="page" href="{% url 'userProjects' %}">Projects</a>
+                        <a class="nav-link me-2 {{projectsActive}}" aria-current="page"
+                            href="{% url 'userProjects' %}">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-2 {{aboutActive}}" aria-current="page" href="{% url 'userAbout' %}">About</a>
+                        <a class="nav-link me-2 {{aboutActive}}" aria-current="page"
+                            href="{% url 'userAbout' %}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-2 {{servicesActive}}" aria-current="page" href="{% url 'userServices' %}">Services</a>
+                        <a class="nav-link me-2 {{servicesActive}}" aria-current="page"
+                            href="{% url 'userServices' %}">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-2 {{contactActive}}" aria-current="page" href="{% url 'userContact' %}">Contact</a>
+                        <a class="nav-link me-2 {{contactActive}}" aria-current="page"
+                            href="{% url 'userContact' %}">Contact</a>
                     </li>
                     <li class="nav-item  d-flex justify-content-center">
-                        <a class="nav-link ms-2 my-auto btn btn-outline-dark rounded rounded-pill px-3 text-dark d-md-block d-none" aria-current="page" href="{% url 'userToken' %}">Track Work</a>
+                        <a class="nav-link ms-2 my-auto btn btn-outline-dark rounded rounded-pill px-3 text-dark d-md-block d-none"
+                            aria-current="page" href="{% url 'userToken' %}">Track Work</a>
                     </li>
                 </ul>
                 <!-- Left links -->
@@ -121,7 +134,8 @@
                     <div class="col-12 col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <img class="rounded-2 me-2" src="{% static 'userPage/img/archiFirmLogo.png' %}" width="24" height="24"/> Build-Easy-Associates
+                            <img class="rounded-2 me-2" src="{% static 'userPage/img/archiFirmLogo.png' %}" width="24"
+                                height="24" /> Build-Easy-Associates
                         </h6>
                         <p>
                             Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -199,12 +213,15 @@
     </footer>
     <!-- Footer -->
     <script>
-        var preloader = document.getElementById("loader");
-        preloader.style.display = "none";
-        AOS.init({
-            once: true,
-        });
+        setInterval(() => {
+            var preloader = document.getElementById("loader");
+            preloader.style.display = "none";
+            AOS.init({
+                once: true,
+            });
+        }, 5000);
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
 </body>
+
 </html>
