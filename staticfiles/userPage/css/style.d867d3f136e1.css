@@ -1,0 +1,98 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  font-family: "Montserrat", sans-serif;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.content span {
+  color: rgb(255, 0, 0);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.content span:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 3px #f40303;
+}
+
+.content span:nth-child(2) {
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+.bgImgFirst {
+  opacity: 0.9;
+  background-image: url("/static/userPage/img/bgImgFirst.e11c732f6597.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#pulse-button {
+  cursor: pointer;
+  animation: pulse 1.2s infinite;
+}
+
+#pulse-button:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.background {
+  filter: blur(4px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.foreground {
+  backdrop-filter: blur(10px);
+}
