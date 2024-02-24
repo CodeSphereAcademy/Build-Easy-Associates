@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-wf)$-$6=)gyplezi811p+g=@+bncth!t&eabvs@9nnx0g&d4v3'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app','*']
 
@@ -49,10 +49,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ArchiFirm.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "buildeasydb",
+        "USER": "buildeasyuser",
+        "PASSWORD": "orT4oKNPMyqPhf1Obw16Y3D8kE7JN4l7",
+        "HOST": "dpg-cncortmn7f5s73bhtehg-a.singapore-postgres.render.com",
+        "PORT": "5432",
     }
 }
 
